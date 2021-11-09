@@ -1,80 +1,31 @@
 #include <iostream>
 #include <fstream>
-#include <string>
-#include <vector>
-#include <iomanip>
-#include <windows.h>
-#include <stdio.h>
-#include <ctype.h>
 
-using namespace std;
+std::string userFile();
 
-vector<double > wavFile;
+void readFile(std::string);
 
-class FileIO
-{
-    public: 
-        FileIO (string filepath)
-        {
+void displayFile(std::string);
 
-        }
+int main(){
     
-        vector<string> getMetaData ()
-        {
+    return 0;
+}
 
-        }
+std::string userFile(){
+    std::string filename;
+    std::cout << "Enter the name of your file: ";
+    std::cin >> filename;
+    return filename;
+}
+void readFile(std::string file){
+    
+}
 
-        void importFile ()
-        {
-
-        }
-
-        void exportFile (vector<double> wavFileData, string filePath, vector<string> )
-        {
-
-        }
-
-    private:
-        bool fileExists ()
-        {
-
-        }
-
-
-}; 
-
-class AudioModule
-{
-
-
-};
-
-    // Sultan
-    class Normalization : AudioModule  
-    {
-
-    };
-
-    // Derek
-    class Echo : AudioModule  
-    {
-
-    };
-
-    // Connor
-    class GainAdjustment : AudioModule  
-    {
-
-    };
-
-    // Connor
-    class LowPassFilter : AudioModule  
-    {
-
-    };
-
-    // Sultan
-    class Compression : AudioModule  
-    {
-
-    };
+void displayFile(std::string file){
+    std::string line;
+    std::ifstream dataFile(file);
+    while(std::getline(dataFile,line)){
+        std::cout << line << std::endl;
+    }
+}
