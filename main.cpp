@@ -9,12 +9,19 @@
 
 using namespace std;
 
-vector<double > wavFile;
-
 class FileIO
 {
+    private:
+        vector<double> originalWavFile;
+        vector<double> newWavFile;
+
+        vector<string> metadata; 
+
+        string filePath;
+
+
     public: 
-        FileIO (string filepath)
+        FileIO (string inputFilepath)
         {
 
         }
@@ -33,12 +40,21 @@ class FileIO
         {
 
         }
-
-    private:
-        bool fileExists ()
+        vector<double> getOriginal() 
         {
 
         }
+        
+
+
+    private:
+        bool fileCheck()
+        {
+            std::ifstream infile(filePath);
+            return (infile.good() && filePath.substr(filePath.find_last_of(".") + 1) == "wav");
+        }
+
+
 
 
 }; 
