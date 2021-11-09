@@ -7,7 +7,9 @@
 #include <stdio.h>
 #include <ctype.h>
 
-vector<double> wavFile;
+using namespace std;
+
+vector<double > wavFile;
 
 class FileIO
 {
@@ -16,7 +18,27 @@ class FileIO
         {
 
         }
+    
+        vector<string> getMetaData ()
+        {
 
+        }
+
+        void importFile ()
+        {
+
+        }
+
+        void exportFile (vector<double> wavFileData, string filePath, vector<string> )
+        {
+
+        }
+
+    private:
+        bool fileExists ()
+        {
+
+        }
 
 
 }; 
