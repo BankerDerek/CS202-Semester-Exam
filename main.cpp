@@ -46,28 +46,34 @@ class FileIO
 class AudioModule
 {
 
+
 };
 
+    // Sultan
     class Normalization : AudioModule  
     {
 
     };
 
+    // Derek
     class Echo : AudioModule  
     {
 
     };
 
+    // Connor
     class GainAdjustment : AudioModule  
     {
 
     };
 
+    // Connor
     class LowPassFilter : AudioModule  
     {
 
     };
 
+    // Sultan
     class Compression : AudioModule  
     {
 
