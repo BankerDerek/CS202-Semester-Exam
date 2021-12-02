@@ -21,37 +21,44 @@ class FileIO
 
 
     public: 
-        FileIO (string inputFilepath)
+
+        void importFile (string inputFilePath)
+        {
+            if (fileCheck(inputFilePath))
+            {
+                std::ifstream file(inputFilePath, std::ios::binary | std::ios::in);
+                if (file.is_open())
+                {
+                    file.read((char))
+                }
+            }
+            else 
+            {
+                
+            }
+        }
+
+        void exportFile (string filePath, vector<string> metaData)
         {
 
         }
-    
-        vector<string> getMetaData ()
-        {
 
-        }
-
-        void importFile ()
-        {
-
-        }
-
-        void exportFile (vector<double> wavFileData, string filePath, vector<string> )
-        {
-
-        }
         vector<double> getOriginal() 
         {
 
         }
-        
+
+         vector<string> getMetaData ()
+        {
+
+        }
 
 
     private:
-        bool fileCheck()
+        bool fileCheck(string inputFilePath)
         {
-            std::ifstream infile(filePath);
-            return (infile.good() && filePath.substr(filePath.find_last_of(".") + 1) == "wav");
+            std::ifstream infile(inputFilePath);
+            return (infile.good() && inputFilePath.substr(inputFilePath.find_last_of(".") + 1) == "wav");
         }
 
 
