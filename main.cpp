@@ -7,6 +7,10 @@
 #include <stdio.h>
 #include <ctype.h>
 
+#include "AudioModule.h"
+#include "LowPassFilter.h"
+#include "GainAdjustment.h"
+
 //#include "waveHeader.h"
 
 using namespace std;
@@ -100,11 +104,6 @@ class FileIO
 
 }; 
 
-class AudioModule
-{
-
-
-};
 
     // Sultan
     class Normalization : AudioModule  
@@ -117,7 +116,7 @@ class AudioModule
     {
 
     };
-
+    /*
     // Connor
     class GainAdjustment : AudioModule  
     {
@@ -129,6 +128,7 @@ class AudioModule
     {
 
     };
+    */
 
     // Sultan
     class Compression : AudioModule  
