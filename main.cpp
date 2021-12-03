@@ -37,7 +37,7 @@ typedef struct waveHeader
 class FileIO
 {
     private:
-        vector<double> SoundData;
+        vector<double> soundData;
 
         char* buffer;
         
@@ -71,9 +71,15 @@ class FileIO
 
         }
 
-        vector<double> getOriginal() 
+        vector<double> getSoundData() 
         {
+            return soundData;
+        }
 
+        void setSoundData (vector<double> inputData)
+        {
+            soundData.clear();
+            soundData = inputData;
         }
 
          vector<string> getMetaData ()
