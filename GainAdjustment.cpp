@@ -16,11 +16,11 @@ vector<double> GainAdjustment::adjustVector(vector<double> waveOriginal){
 
     
 
-double GainAdjustment::adjustment(double value, int adjustNumber){
+double GainAdjustment::adjustment(double value, double adjustNumber){
         return value * adjustNumber;
     }    
 
-void GainAdjustment::setAdjustNumber(int adjust){
+void GainAdjustment::setAdjustNumber(double adjust){
         adjustNumber = adjust;
     }    
 

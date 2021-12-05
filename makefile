@@ -1,4 +1,4 @@
-main: main.cpp GainAdjustment.o GainAdjustment.h LowPassFilter.o LowPassFilter.h AudioModule.o AudioModule.h
+main: main.cpp GainAdjustment.o GainAdjustment.h LowPassFilter.o LowPassFilter.h
 	g++ -o AudioProcessor.exe main.cpp GainAdjustment.o
 GainAdjustment.o: GainAdjustment.cpp GainAdjustment.h
 	g++ -c GainAdjustment.cpp
