@@ -75,16 +75,13 @@ class FileIO
 
         }
 
-<<<<<<< Updated upstream
         vector<double> getSoundData() 
-=======
         // Sets and Gets for the audio channels 
         vector<double> getSoundDataRight() 
         {
             return soundDataRight;
         }
         vector<double> getSoundDataRight() 
->>>>>>> Stashed changes
         {
             return soundData;
         }
