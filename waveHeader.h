@@ -1,7 +1,7 @@
 #ifndef WAVEHEADER_H
 #define WAVEHEADER_H
 
-typedef struct WaveHeader 
+struct WaveHeader 
 {
     // RIFF Header
     char riff_header[4];        // "RIFF"
