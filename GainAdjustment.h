@@ -1,3 +1,4 @@
+//Connor Riche
 //GainAdjustment.h file
 #include <iostream>
 #include <vector>

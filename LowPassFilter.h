@@ -1,3 +1,4 @@
+//Connor Riche
 //LowPassFilter.h file
 #include <iostream>
 #include <vector>

@@ -1,3 +1,4 @@
+//Connor Riche
 //LowPassFilter.cpp file
 #ifndef LOWPASSFILTER_H
 #define LOWPASSFILTER_H

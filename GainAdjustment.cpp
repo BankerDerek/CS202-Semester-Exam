@@ -1,3 +1,4 @@
+//Connor Riche
 //GainAdjustment.cpp file
 #ifndef GAINADJUSTMENT_H
 #define GAINADJUSTMENT_H
