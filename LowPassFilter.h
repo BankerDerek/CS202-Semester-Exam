@@ -1,10 +1,9 @@
 //LowPassFilter.h file
 #include <iostream>
 #include <vector>
-#include "AudioModule.h"
 using namespace std;
 
-class LowPassFilter : AudioModule {
+class LowPassFilter{
 private:
     vector<double> finalWave;
     vector<double> sample;

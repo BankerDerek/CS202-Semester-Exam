@@ -1,10 +1,9 @@
 //GainAdjustment.h file
 #include <iostream>
 #include <vector>
-#include "AudioModule.h"
 using namespace std;
 
-class GainAdjustment : AudioModule {
+class GainAdjustment{
 private:
     int adjustNumber;
 public:

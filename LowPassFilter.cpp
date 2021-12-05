@@ -23,6 +23,7 @@ vector<double> delaySignal(vector<double> waveOriginal, int delay){
         }
         delayedSignal[i+delay] = waveOriginal[i];
     }
+    return delayedSignal;
 }
 
 double multiply(double currentWave, double sample, int gain){
