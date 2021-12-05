@@ -17,6 +17,11 @@ struct WaveHeader waveHeader;           // Holds the file header
 std::vector<double> soundDataRight;      // Right channel audio data in stereo, also used if mono
 std::vector<double> soundDataLeft;       // Left channel audio data in stereo
 
+bool validateFile(std::string inputFilePath)
+{
+    std::ifstream infile(inputFilePath);
+    return (infile.good() && inputFilePath.substr(inputFilePath.find_last_of(".") + 1) == "wav");
+}
 
 bool ingestFile (std::string inputFilePath)
 {
@@ -128,11 +133,5 @@ void printHeader()
 
     std::cout << "data_header: " << waveHeader.data_header[0] << waveHeader.data_header[1] << waveHeader.data_header[2] << waveHeader.data_header[3] << std::endl;      
     std::cout << "data_bytes: " << waveHeader.data_bytes << std::endl;
-}
-
-bool validateFile(std::string inputFilePath)
-{
-    std::ifstream infile(inputFilePath);
-    return (infile.good() && inputFilePath.substr(inputFilePath.find_last_of(".") + 1) == "wav");
 }
 #endif

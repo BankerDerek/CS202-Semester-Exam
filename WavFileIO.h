@@ -17,6 +17,8 @@ class WavFileIO
 
 
     public:
+        bool validateFile(std::string inputFilePath);
+
         bool ingestFile (std::string inputFilePath);
 
         // Sets and Gets for the audio channels 
@@ -26,6 +28,4 @@ class WavFileIO
         void setSoundDataLeft (std::vector<double> inputData);
 
         void printHeader();
-
-        bool validateFile(std::string inputFilePath);
 };
