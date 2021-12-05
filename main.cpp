@@ -10,7 +10,7 @@
 #include "LowPassFilter.h"      // Connor
 #include "GainAdjustment.h"     // Connor
 #include "Normalization.h"      // Sultan
-// #include "Compression.h"        // Sultan
+#include "Compression.h"        // Sultan
 #include "Echo.h"               // Derek
 
 #include "waveHeader.h"         // Header struct
