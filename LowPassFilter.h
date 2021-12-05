@@ -1,20 +1,20 @@
+//Connor Riche
 //LowPassFilter.h file
 #include <iostream>
 #include <vector>
-using namespace std;
 
 class LowPassFilter{
 private:
-    vector<double> finalWave;
-    vector<double> sample;
-    double gain = 1;
-    double delay = 1;
+    std::vector<float> finalWave;
+    std::vector<float> sample;
+    float gain = 1;
+    float delay = 1;
 public:
-    vector<double> lowPassVector(vector<double> waveOriginal);
-    vector<double> delaySignal(vector<double> waveOriginal);
-    double multiply(double currentWave, double sample);
-    double add(double originalWave, double currentWave);
+    std::vector<float> lowPassVector(std::vector<float> waveOriginal);
+    std::vector<float> delaySignal(std::vector<float> waveOriginal);
+    float multiply(float currentWave, float sample);
+    float add(float originalWave, float currentWave);
     //void setSample(vector<double> newSample);
-    void setGain(double newGain);
-    void setDelay(double newDelay);
+    void setGain(float newGain);
+    void setDelay(float newDelay);
 };
