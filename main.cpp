@@ -6,12 +6,13 @@
 #include <windows.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <utility>
 
 #include "LowPassFilter.h"      // Connor
 #include "GainAdjustment.h"     // Connor
 // #include "Normalization.h"      // Sultan
 // #include "Compression.h"        // Sultan
-// #include "Echo.h"               // Derek
+#include "Echo.h"               // Derek
 
 #include "waveHeader.h"         // Header struct
 
@@ -36,27 +37,77 @@ class WavFileIO
         WavFileIO ()
         {}
 
-        WavFileIO (string inputFilePath)
+        bool ingestFile (string inputFilePath)
         {
-            filePath = inputFilePath;
-            validateFile(inputFilePath);
-            ingestFile(inputFilePath);
-        }
+            // Checks if the file exists and has a ".wav" extension
+            if (!validateFile(inputFilePath))
+            {
+                return false; 
+            }    
 
-
-        void ingestFile (string inputFilePath)
-        {
+            // Opens the file
             std::ifstream file(inputFilePath, std::ios::binary | std::ios::in);
+
             short* buffer;
             if (file.is_open())
             {
                 file.read((char*)&waveHeader, sizeof(waveHeader));
+
+                if (waveHeader.riff_header != "RIFF")
+                {
+                    return false;
+                } 
+
                 buffer = new short[waveHeader.data_bytes];
                 file.read((char*)buffer, waveHeader.data_bytes);
 
-
+                if (waveHeader.num_channels == 1)
+                {
+                    if (waveHeader.bit_depth == 8)
+                    {
+                        for (int i = 0; i < waveHeader.data_bytes / waveHeader.sample_alignment; i++ )
+                        {
+                            soundDataRight.push_back((float)buffer[i] / INT_FAST8_MAX);
+                        }
+                    }
+                    if (waveHeader.bit_depth == 16)
+                    {
+                        for (int i = 0; i < waveHeader.data_bytes / waveHeader.sample_alignment; i++ )
+                        {
+                            soundDataRight.push_back((float)buffer[i] / INT_FAST16_MAX);
+                        }
+                    }
+                }
+                else
+                {
+                    if (waveHeader.bit_depth == 8)
+                    {
+                        for (int i = 0; i < (waveHeader.data_bytes / waveHeader.sample_alignment) / 2; i++ )
+                        {
+                            soundDataRight.push_back((float)buffer[i] / INT_FAST8_MAX);
+                        }
+                        for (int i = (waveHeader.data_bytes / waveHeader.sample_alignment) / 2; i < waveHeader.data_bytes / waveHeader.sample_alignment; i++ )
+                        {
+                            soundDataLeft.push_back((float)buffer[i] / INT_FAST8_MAX);
+                        }
+                    }
+                    if (waveHeader.bit_depth == 16)
+                    {
+                        for (int i = 0; i < (waveHeader.data_bytes / waveHeader.sample_alignment) / 2; i++ )
+                        {
+                            soundDataRight.push_back((float)buffer[i] / INT_FAST16_MAX);
+                        }
+                        for (int i = (waveHeader.data_bytes / waveHeader.sample_alignment) / 2; i < waveHeader.data_bytes / waveHeader.sample_alignment; i++ )
+                        {
+                            soundDataLeft.push_back((float)buffer[i] / INT_FAST16_MAX);
+                        }
+                    }
+                }
+                
+                delete buffer;
                 file.close();   
             }
+            return false;
         }
 
         
@@ -149,7 +200,7 @@ main(int argc, char *argv[])
         cout << "\tFile path: ";
         cin >> userInput;
         // cout << "UserInput: \"" << userInput << "\"" << endl;
-        if (audioFile.validateFile(userInput))
+        if (audioFile.ingestFile(userInput))
         {
             cout << "\tFile loaded successfully." << endl << endl;
             break;
