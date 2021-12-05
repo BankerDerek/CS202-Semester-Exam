@@ -1,5 +1,7 @@
-main: main.cpp AudioProcessor.o AudioProcessor.h LowPassFilter.o LowPassFilter.h GainAdjustment.o GainAdjustment.h Normalization.o Normalization.h Compression.o Compression.h Echo.o Echo.h WavFileIO.o WavFileIO.h
-	g++ -o AudioProcessor.exe main.cpp AudioProcessor.o LowPassFilter.o GainAdjustment.o Normalization.o Compression.o Echo.o WavFileIO.o   
+main: main.cpp WavFileIO.o WavFileIO.h AudioProcessor.o AudioProcessor.h LowPassFilter.o LowPassFilter.h GainAdjustment.o GainAdjustment.h Normalization.o Normalization.h Compression.o Compression.h Echo.o Echo.h
+	g++ -o AudioProcessor.exe main.cpp WavFileIO.o AudioProcessor.o LowPassFilter.o GainAdjustment.o Normalization.o Compression.o Echo.o   
+WavFileIO.o: WavFileIO.cpp WavFileIO.h
+	g++ -c WavFileIO.cpp
 AudioProcessor.o: AudioProcessor.cpp AudioProcessor.h
 	g++ -c AudioProcessor.cpp
 LowPassFilter.o: LowPassFilter.cpp LowPassFilter.h
@@ -12,7 +14,5 @@ Compression.o: Compression.cpp Compression.h
 	g++ -c Compression.cpp
 Echo.o: Echo.cpp Echo.h
 	g++ -c Echo.cpp
-WavFileIO.o: WavFileIO.cpp WavFileIO.h
-	g++ -c WavFileIO.cpp
 clean: 
 	del *.o *.exe *exe.core

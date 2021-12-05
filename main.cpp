@@ -2,10 +2,9 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <iomanip>
-#include <windows.h>
-#include <stdio.h>
-#include <ctype.h>
+
+#include "waveHeader.h"         // Header struct
+#include "WavFileIO.h"          // File IO class
 
 #include "LowPassFilter.h"      // Connor
 #include "GainAdjustment.h"     // Connor
@@ -13,17 +12,12 @@
 #include "Compression.h"        // Sultan
 #include "Echo.h"               // Derek
 
-#include "waveHeader.h"         // Header struct
-#include "WavFileIO.h"          // File IO class
-
 using namespace std;
-
 
 main(int argc, char *argv[])
 {
     // Class initializations
     WavFileIO audioFile;
-    
     
     // Intoduction
     cout << endl << "Initializing Audio Editor..." << endl;

@@ -10,12 +10,12 @@
 #include "WavFileIO.h"
 
 
-std::string filePath;                    // Holds the provided file path
+std::string filePath;                   // Holds the provided file path
 
 struct WaveHeader waveHeader;           // Holds the file header
 
-std::vector<double> soundDataRight;      // Right channel audio data in stereo, also used if mono
-std::vector<double> soundDataLeft;       // Left channel audio data in stereo
+std::vector<double> soundDataRight;     // Right channel audio data in stereo, also used if mono
+std::vector<double> soundDataLeft;      // Left channel audio data in stereo
 
 bool validateFile(std::string inputFilePath)
 {
