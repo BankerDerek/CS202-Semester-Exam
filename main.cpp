@@ -7,83 +7,69 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#include "AudioModule.h"
-#include "LowPassFilter.h"
-#include "GainAdjustment.h"
+#include "LowPassFilter.h"      // Connor
+#include "GainAdjustment.h"     // Connor
+// #include "Normalization.h"      // Sultan
+// #include "Compression.h"        // Sultan
+// #include "Echo.h"               // Derek
 
-//#include "waveHeader.h"
+#include "waveHeader.h"         // Header struct
 
 using namespace std;
 
-
-typedef struct waveHeader 
-{
-    // RIFF Header
-    char riff_header[4];        // "RIFF"
-    int wav_size;               // RIFF Chunk size 
-    char wave_header[4];        // Wave Header 
-
-    // Header information
-    char fmt_header[4];         // "FMT"
-    int fmt_chunk_size;         // FMT Chunk size
-    short audio_format;         // Audio format: 1=PCM, 6=mulaw, 7=alaw, 257=IBM Mu-Law, 258=IBM A-Law, 259=ADPCM 
-    short num_channels;         // Number of channels: 1=Mono 2=Sterio
-    int sample_rate;            // Sampling Frequency
-    int byte_rate;              // bytes per second: sample_rate * num_channels * bytes per sample
-    short sample_alignment;     // num_channels * bytes per sample 
-    short bit_depth;            // Number of bits per sample 
-
-    // Data
-    char data_header[4];        // 
-    int data_bytes;             // 
-
-} wav_header;
-class FileIO
+class WavFileIO
 {
     private:
-        vector<double> soundData;
-
-        char* buffer;
+        string filePath;                    // Holds the provided file path
         
-        vector<string> metadata; 
+        struct WaveHeader waveHeader;       // Holds the file header
 
-        string filePath;
+        vector<double> soundDataRight;      // Right channel audio data in stereo, also used if mono
+        vector<double> soundDataLeft;       // Left channel audio data in stereo
+
+        bool mono;                          // True if file is mono
+
+        
 
 
     public: 
-        void importFile (string inputFilePath)
+        WavFileIO ()
+        {}
+
+        WavFileIO (string inputFilePath)
         {
-            if (fileCheck(inputFilePath))
+            filePath = inputFilePath;
+            validateFile(inputFilePath);
+            ingestFile(inputFilePath);
+        }
+
+
+        void ingestFile (string inputFilePath)
+        {
+            std::ifstream file(inputFilePath, std::ios::binary | std::ios::in);
+            short* buffer;
+            if (file.is_open())
             {
-                std::ifstream file(inputFilePath, std::ios::binary | std::ios::in);
-                if (file.is_open())
-                {
-                    file.read((char*)&waveHeader, sizeof(wav_header));
-                    buffer = new unsigned char[waveHeader.data_bytes];
-                    file.read((char*)buffer, waveHeader.data_bytes);
-                    file.close();
-                }
-            }
-            else 
-            {
-                throw "File reading error";
+                file.read((char*)&waveHeader, sizeof(waveHeader));
+                buffer = new short[waveHeader.data_bytes];
+                file.read((char*)buffer, waveHeader.data_bytes);
+
+
+                file.close();   
             }
         }
 
-        void exportFile (string filePath, vector<string> metaData)
-        {
+        
 
-        }
-
-        vector<double> getSoundData() 
+        
         // Sets and Gets for the audio channels 
         vector<double> getSoundDataRight() 
         {
             return soundDataRight;
         }
-        vector<double> getSoundDataRight() 
+        vector<double> getSoundDataLeft() 
         {
-            return soundData;
+            return soundDataLeft;
         }
         void setSoundDataRight (vector<double> inputData)
         {
@@ -96,11 +82,6 @@ class FileIO
             soundDataLeft = inputData;
         }
 
-<<<<<<< Updated upstream
-         vector<string> getMetaData ()
-        {
-
-=======
         void printHeader()
         {
             cout << "riff_header: " << waveHeader.riff_header[0] << waveHeader.riff_header[1] << waveHeader.riff_header[2] << waveHeader.riff_header[3] << endl;
@@ -118,12 +99,9 @@ class FileIO
 
             cout << "data_header: " << waveHeader.data_header[0] << waveHeader.data_header[1] << waveHeader.data_header[2] << waveHeader.data_header[3] << endl;      
             cout << "data_bytes: " << waveHeader.data_bytes << endl;
->>>>>>> Stashed changes
         }
 
-
-    private:
-        bool fileCheck(string inputFilePath)
+        bool validateFile(string inputFilePath)
         {
             std::ifstream infile(inputFilePath);
             return (infile.good() && inputFilePath.substr(inputFilePath.find_last_of(".") + 1) == "wav");
@@ -134,37 +112,6 @@ class FileIO
 
 }; 
 
-
-    // Sultan
-    class Normalization : AudioModule  
-    {
-
-    };
-
-    // Derek
-    class Echo : AudioModule  
-    {
-
-    };
-    /*
-    // Connor
-    class GainAdjustment : AudioModule  
-    {
-
-    };
-
-    // Connor
-    class LowPassFilter : AudioModule  
-    {
-
-    };
-    */
-
-    // Sultan
-    class Compression : AudioModule  
-    {
-
-    };
 main(int argc, char *argv[])
 {
     // Class inintalizations
