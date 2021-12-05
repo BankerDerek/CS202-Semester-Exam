@@ -7,14 +7,14 @@ class LowPassFilter{
 private:
     vector<double> finalWave;
     vector<double> sample;
-    int gain = 1;
-    int delay = 1;
+    double gain = 1;
+    double delay = 1;
 public:
     vector<double> lowPassVector(vector<double> waveOriginal);
-    vector<double> delaySignal(vector<double> waveOriginal, int delay);
-    double multiply(double currentWave, double sample, int gain);
+    vector<double> delaySignal(vector<double> waveOriginal);
+    double multiply(double currentWave, double sample);
     double add(double originalWave, double currentWave);
     //void setSample(vector<double> newSample);
-    void setGain(int newGain);
-    void setDelay(int newDelay);
+    void setGain(double newGain);
+    void setDelay(double newDelay);
 };

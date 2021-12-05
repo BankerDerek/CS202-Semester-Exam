@@ -7,15 +7,15 @@
 using namespace std;
 
 vector<double> LowPassFilter::lowPassVector(vector<double> waveOriginal){
-    sample = delaySignal(waveOriginal, delay);
+    sample = delaySignal(waveOriginal);
     for(int i=0; i < sizeof(waveOriginal); i++){
-        finalWave[i] = multiply(waveOriginal[i], sample[i], gain);
+        finalWave[i] = multiply(waveOriginal[i], sample[i]);
         finalWave[i] = add(waveOriginal[i], finalWave[i]);
     }
     return finalWave;
 }  
 
-vector<double> delaySignal(vector<double> waveOriginal, int delay){
+vector<double> LowPassFilter::delaySignal(vector<double> waveOriginal){
     vector<double> delayedSignal;
     for(int i=0; i < sizeof(waveOriginal); i++){
         if(i < delay){
@@ -26,11 +26,11 @@ vector<double> delaySignal(vector<double> waveOriginal, int delay){
     return delayedSignal;
 }
 
-double multiply(double currentWave, double sample, int gain){
+double LowPassFilter::multiply(double currentWave, double sample){
     return currentWave*(sample*gain);
 }    
 
-double add(double originalWave, double currentWave){
+double LowPassFilter::add(double originalWave, double currentWave){
     return originalWave + currentWave;
 }    
 
@@ -40,11 +40,11 @@ void LowPassFilter::setSample(vector<double> newSample){
 }
 */
 
-void LowPassFilter::setGain(int newGain){
+void LowPassFilter::setGain(double newGain){
     gain = newGain;
 }
 
-void LowPassFilter::setDelay(int newDelay){
+void LowPassFilter::setDelay(double newDelay){
     delay = newDelay;
 }
     

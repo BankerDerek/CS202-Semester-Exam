@@ -5,9 +5,9 @@ using namespace std;
 
 class GainAdjustment{
 private:
-    int adjustNumber;
+    double adjustNumber;
 public:
     vector<double> adjustVector(vector<double> waveOriginal);
-    double adjustment(double value, int adjustNumber);
-    void setAdjustNumber(int adjust);
+    double adjustment(double value, double adjustNumber);
+    void setAdjustNumber(double adjust);
 };
