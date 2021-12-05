@@ -75,20 +75,53 @@ class FileIO
 
         }
 
+<<<<<<< Updated upstream
         vector<double> getSoundData() 
+=======
+        // Sets and Gets for the audio channels 
+        vector<double> getSoundDataRight() 
+        {
+            return soundDataRight;
+        }
+        vector<double> getSoundDataRight() 
+>>>>>>> Stashed changes
         {
             return soundData;
         }
-
-        void setSoundData (vector<double> inputData)
+        void setSoundDataRight (vector<double> inputData)
         {
-            soundData.clear();
-            soundData = inputData;
+            soundDataRight.clear();
+            soundDataRight = inputData;
+        }
+        void setSoundDataLeft (vector<double> inputData)
+        {
+            soundDataLeft.clear();
+            soundDataLeft = inputData;
         }
 
+<<<<<<< Updated upstream
          vector<string> getMetaData ()
         {
 
+=======
+        void printHeader()
+        {
+            cout << "riff_header: " << waveHeader.riff_header[0] << waveHeader.riff_header[1] << waveHeader.riff_header[2] << waveHeader.riff_header[3] << endl;
+            cout << "wav_size: " << waveHeader.wav_size << endl;       
+            cout << "wave_header: " << waveHeader.wave_header << endl;      
+
+            cout << "fmt_header: " << waveHeader.fmt_header[0] << waveHeader.fmt_header[1] << waveHeader.fmt_header[2] << waveHeader.fmt_header[3] << endl;      
+            cout << "fmt_chunk_size: " << waveHeader.fmt_chunk_size << endl;      
+            cout << "audio_format: " << waveHeader.audio_format << endl;      
+            cout << "num_channels: " << waveHeader.num_channels << endl;      
+            cout << "sample_rate: " << waveHeader.sample_rate << endl;      
+            cout << "byte_rate: " << waveHeader.byte_rate << endl;      
+            cout << "sample_alignment: " << waveHeader.sample_alignment << endl;      
+            cout << "bit_depth: " << waveHeader.bit_depth << endl;      
+
+            cout << "data_header: " << waveHeader.data_header[0] << waveHeader.data_header[1] << waveHeader.data_header[2] << waveHeader.data_header[3] << endl;      
+            cout << "data_bytes: " << waveHeader.data_bytes << endl;
+>>>>>>> Stashed changes
         }
 
 
