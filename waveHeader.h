@@ -1,7 +1,7 @@
-#ifndef WavHeader
-#define WavHeader
+#ifndef WAVEHEADER_H
+#define WAVEHEADER_H
 
-typedef struct wav_header 
+typedef struct WaveHeader 
 {
     // RIFF Header
     char riff_header[4];        // "RIFF"
@@ -22,5 +22,5 @@ typedef struct wav_header
     char data_header[4];        // 
     int data_bytes;             // 
 
-} wav_header;
+};
 #endif 
