@@ -17,16 +17,16 @@ struct WaveHeader waveHeader;           // Holds the file header
 std::vector<double> soundDataRight;     // Right channel audio data in stereo, also used if mono
 std::vector<double> soundDataLeft;      // Left channel audio data in stereo
 
-bool validateFile(std::string inputFilePath)
+bool WavFileIO::validateFile(std::string inputFilePath)
 {
     std::ifstream infile(inputFilePath);
     return (infile.good() && inputFilePath.substr(inputFilePath.find_last_of(".") + 1) == "wav");
 }
 
-bool ingestFile (std::string inputFilePath)
+bool WavFileIO::ingestFile (std::string inputFilePath)
 {
     // Checks if the file exists and has a ".wav" extension
-    if (!validateFile(inputFilePath))
+    if (!WavFileIO::validateFile(inputFilePath))
     {
         return false; 
     }    
@@ -97,26 +97,26 @@ bool ingestFile (std::string inputFilePath)
 }
 
 // Sets and Gets for the audio channels 
-std::vector<double> getSoundDataRight() 
+std::vector<double> WavFileIO::getSoundDataRight() 
 {
     return soundDataRight;
 }
-std::vector<double> getSoundDataLeft() 
+std::vector<double> WavFileIO::getSoundDataLeft() 
 {
     return soundDataLeft;
 }
-void setSoundDataRight (std::vector<double> inputData)
+void WavFileIO::setSoundDataRight (std::vector<double> inputData)
 {
     soundDataRight.clear();
     soundDataRight = inputData;
 }
-void setSoundDataLeft (std::vector<double> inputData)
+void WavFileIO::setSoundDataLeft (std::vector<double> inputData)
 {
     soundDataLeft.clear();
     soundDataLeft = inputData;
 }
 
-void printHeader()
+void WavFileIO::printHeader()
 {
     std::cout << "riff_header: " << waveHeader.riff_header[0] << waveHeader.riff_header[1] << waveHeader.riff_header[2] << waveHeader.riff_header[3] << std::endl;
     std::cout << "wav_size: " << waveHeader.wav_size << std::endl;       

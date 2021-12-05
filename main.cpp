@@ -21,7 +21,9 @@ main(int argc, char *argv[])
     LowPassFilter LPFilter;
     GainAdjustment GainAjust;
     Normalization Normal; 
-    
+
+    Echo echo;
+
     // Intoduction
     cout << endl << "Initializing Audio Editor..." << endl;
     
