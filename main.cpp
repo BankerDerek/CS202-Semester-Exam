@@ -18,6 +18,9 @@ main(int argc, char *argv[])
 {
     // Class initializations
     WavFileIO audioFile;
+    LowPassFilter LPFilter;
+    GainAdjustment GainAjust;
+    Normalization Normal; 
     
     // Intoduction
     cout << endl << "Initializing Audio Editor..." << endl;
