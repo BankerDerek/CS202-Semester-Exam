@@ -12,11 +12,12 @@ float Normalization::findMaxVal(std::vector<float> data, float largestValue){
     }
 	return largestValue;
 }
+//Find the multiplier using the largest value
 float Normalization::findMultiplier(float largestValue, float multiplier){
     multiplier = 1 / largestValue;
     return multiplier;
 }
-//Dvides all the values in the data by the largest value to Normalize the data
+//Multiplies all the values in the data by the multiplier value to Normalize the data
 std::vector<float> Normalization::normalizeData(std::vector<float> data, float multiplier){
 	std::vector<float> modifiedData;
 	for(unsigned int i = 0; i < data.size(); i++){
