@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('classCompression.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 
+<p>The compression class compresses a sound file.  
+ <a href="classCompression.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Compression_8h_source.html">Compression.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Compression:</div>
@@ -112,12 +115,19 @@ Inheritance diagram for Compression:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a56ee6b0a764cab1a9cacd9d34d26e2dc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCompression.html#a56ee6b0a764cab1a9cacd9d34d26e2dc">compressData</a> (std::vector&lt; float &gt;)</td></tr>
-<tr class="separator:a56ee6b0a764cab1a9cacd9d34d26e2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9824fb235a64f6d8edb72a0bf9cbcd4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCompression.html#ad9824fb235a64f6d8edb72a0bf9cbcd4">compressData</a> (std::vector&lt; float &gt; waveOriginal)</td></tr>
+<tr class="memdesc:ad9824fb235a64f6d8edb72a0bf9cbcd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compress the vector Returns a smaller vector the original vector was compressed into.  <a href="classCompression.html#ad9824fb235a64f6d8edb72a0bf9cbcd4">More...</a><br /></td></tr>
+<tr class="separator:ad9824fb235a64f6d8edb72a0bf9cbcd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb068979683307eb91351dc2db04b5fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCompression.html#acb068979683307eb91351dc2db04b5fd">setCompFactor</a> (int newFactor)</td></tr>
+<tr class="memdesc:acb068979683307eb91351dc2db04b5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a setter designed to change the variable compFactor Changes the variable used to dictate how much the given vector in the comprss Data class is compressed by.  <a href="classCompression.html#acb068979683307eb91351dc2db04b5fd">More...</a><br /></td></tr>
+<tr class="separator:acb068979683307eb91351dc2db04b5fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a56ee6b0a764cab1a9cacd9d34d26e2dc" name="a56ee6b0a764cab1a9cacd9d34d26e2dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56ee6b0a764cab1a9cacd9d34d26e2dc">&#9670;&nbsp;</a></span>compressData()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >The compression class compresses a sound file. </p>
+<p >The class takes a vector with the data from a sound file and compresses it. It does this by only adding certain, evenly spaced data points and putting them into a new vector. By essentially removing a lot of data points, the sound file becomes smaller and so, compressed. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad9824fb235a64f6d8edb72a0bf9cbcd4" name="ad9824fb235a64f6d8edb72a0bf9cbcd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9824fb235a64f6d8edb72a0bf9cbcd4">&#9670;&nbsp;</a></span>compressData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -126,11 +136,48 @@ Public Member Functions</h2></td></tr>
           <td class="memname">std::vector&lt; float &gt; Compression::compressData </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; float &gt;&#160;</td>
-          <td class="paramname"><em>original</em></td><td>)</td>
+          <td class="paramname"><em>waveOriginal</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Compress the vector Returns a smaller vector the original vector was compressed into. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waveOriginal</td><td>vector taken in is the original vector representing the sound file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector made up of the data points the function narrowed the original vector down to </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>how much the vector is compressed to is determined by the compFactor variable, a factor of two (the default) cuts the vector in half </dd></dl>
+
+</div>
+</div>
+<a id="acb068979683307eb91351dc2db04b5fd" name="acb068979683307eb91351dc2db04b5fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb068979683307eb91351dc2db04b5fd">&#9670;&nbsp;</a></span>setCompFactor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Compression::setCompFactor </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>newFactor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is a setter designed to change the variable compFactor Changes the variable used to dictate how much the given vector in the comprss Data class is compressed by. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newFactor</td><td>is the intiger value replacing the compFactor variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>

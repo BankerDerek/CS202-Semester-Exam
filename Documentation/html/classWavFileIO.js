@@ -1,5 +1,6 @@
 var classWavFileIO =
 [
+    [ "constructName", "classWavFileIO.html#a78040e9bb41376f19e32a547850fa234", null ],
     [ "getNumberOfChannels", "classWavFileIO.html#a6255bbce90a8b1871fcbd4c6f34329bb", null ],
     [ "getSampleRate", "classWavFileIO.html#a9bed7a9961aa92994ac95cc71204a09b", null ],
     [ "getSoundDataLeft", "classWavFileIO.html#a39c3b6e64ca67b0b2b88b5585c822ea7", null ],

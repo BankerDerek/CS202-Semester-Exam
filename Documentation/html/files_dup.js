@@ -5,7 +5,9 @@ var files_dup =
       [ "Process", "classProcess.html", null ]
     ] ],
     [ "Compression.cpp", "Compression_8cpp.html", null ],
-    [ "Compression.h", "Compression_8h.html", "Compression_8h" ],
+    [ "Compression.h", "Compression_8h.html", [
+      [ "Compression", "classCompression.html", "classCompression" ]
+    ] ],
     [ "Echo.cpp", "Echo_8cpp.html", "Echo_8cpp" ],
     [ "Echo.h", "Echo_8h.html", [
       [ "Echo", "classEcho.html", "classEcho" ]

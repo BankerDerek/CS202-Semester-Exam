@@ -15,6 +15,6 @@ Compression.o: Compression.cpp Compression.h
 Echo.o: Echo.cpp Echo.h
 	g++ -c Echo.cpp
 clean: 
-	rm *.o *.exe *exe.core
+	del *.o *.exe *exe.core
 	
 	
