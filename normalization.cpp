@@ -1,7 +1,7 @@
 //by Sultan
 //normalization.cpp
 
-#include "normalization.h"
+#include "Normalization.h"
 
 //Finds the largest value in the data
 void Normalization::findMaxVal(std::vector<float> data){

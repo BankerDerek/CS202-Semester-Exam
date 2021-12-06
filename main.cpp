@@ -9,7 +9,7 @@
 
 #include "LowPassFilter.h"      // Connor
 #include "GainAdjustment.h"     // Connor
-#include "normalization.h"      // Sultan
+#include "Normalization.h"      // Sultan
 #include "Compression.h"        // Sultan
 #include "Echo.h"               // Derek
 #include "AudioProcessor.h"     //Connor
