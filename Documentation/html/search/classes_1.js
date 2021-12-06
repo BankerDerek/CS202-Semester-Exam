@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gainadjustment_0',['GainAdjustment',['../class_gain_adjustment.html',1,'']]]
+  ['gainadjustment_0',['GainAdjustment',['../classGainAdjustment.html',1,'']]]
 ];

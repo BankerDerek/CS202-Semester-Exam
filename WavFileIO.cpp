@@ -17,6 +17,9 @@ struct WaveHeader waveHeader;           // Holds the file header
 std::vector<float> soundDataRight;     // Right channel audio data in stereo, also used if mono
 std::vector<float> soundDataLeft;      // Left channel audio data in stereo
 
+/// Makes sure the file is valid
+///
+/// Returns true if the file exists and has a ".wav" extension at the end
 bool WavFileIO::validateFile(std::string inputFilePath)
 {
     std::ifstream infile(inputFilePath);
