@@ -1,5 +1,9 @@
 //Connor Riche
 //GainAdjustment.h file
+
+#ifndef GAINADJUSTMENT_H
+#define GAINADJUSTMENT_H
+
 #include <vector>
 
 class GainAdjustment{
@@ -10,3 +14,5 @@ public:
     float adjustment(float value);
     void setAdjustNumber(float adjust);
 };
+
+#endif
