@@ -1,7 +1,5 @@
 //Connor Riche
 //LowPassFilter.cpp file
-#ifndef LOWPASSFILTER_H
-#define LOWPASSFILTER_H
 #include "LowPassFilter.h"
 #include <iostream>
 #include <vector>
@@ -26,8 +24,8 @@ std::vector<float> LowPassFilter::delaySignal(std::vector<float> waveOriginal){
     return delayedSignal;
 }
 
-float LowPassFilter::multiply(float currentWave, float sample){
-    return currentWave*(sample*gain);
+float LowPassFilter::multiply(float currentWave, float currentSample){
+    return currentWave*(currentSample*gain);
 }    
 
 float LowPassFilter::add(float originalWave, float currentWave){
@@ -49,4 +47,3 @@ void LowPassFilter::setDelay(float newDelay){
 }
     
 
-#endif
