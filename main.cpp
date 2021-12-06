@@ -21,7 +21,7 @@ main(int argc, char *argv[])
     LowPassFilter low_pass_filter;
     GainAdjustment gain_adjustment;
     Normalization normalization; 
-    Compression compression;
+    // Compression compression;
     Echo echo;
 
     // Intoduction
@@ -96,7 +96,7 @@ main(int argc, char *argv[])
         break;
 
     case '2': // Echo
-        //TODO parameter input
+        
         if (audioFile.getNumberOfChannels() == 1)
         {
             audioFile.setSoundDataRight(echo.applyModule(audioFile.getSoundDataRight()));
