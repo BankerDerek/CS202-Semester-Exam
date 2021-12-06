@@ -125,7 +125,7 @@ main(int argc, char *argv[])
             }
         }
 
-        delay = 
+        delay = delay * (audioFile.getSampleRate() / 1000);
 
 
         if (audioFile.getNumberOfChannels() == 1)

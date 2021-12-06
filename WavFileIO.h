@@ -21,6 +21,10 @@ class WavFileIO
 
         bool ingestFile (std::string inputFilePath);
 
+        // Gets the sample rate
+        int getSampleRate();
+
+        // Gets number of channels
         int getNumberOfChannels();
 
         // Sets and Gets for the audio channels 
