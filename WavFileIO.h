@@ -12,8 +12,8 @@ class WavFileIO
 
         struct WaveHeader waveHeader;           // Holds the file header
 
-        std::vector<double> soundDataRight;      // Right channel audio data in stereo, also used if mono
-        std::vector<double> soundDataLeft;       // Left channel audio data in stereo
+        std::vector<float> soundDataRight;      // Right channel audio data in stereo, also used if mono
+        std::vector<float> soundDataLeft;       // Left channel audio data in stereo
 
 
     public:
@@ -24,10 +24,10 @@ class WavFileIO
         int getNumberOfChannels();
 
         // Sets and Gets for the audio channels 
-        std::vector<double> getSoundDataRight();
-        std::vector<double> getSoundDataLeft();
-        void setSoundDataRight (std::vector<double> inputData);
-        void setSoundDataLeft (std::vector<double> inputData);
+        std::vector<float> getSoundDataRight();
+        std::vector<float> getSoundDataLeft();
+        void setSoundDataRight (std::vector<float> inputData);
+        void setSoundDataLeft (std::vector<float> inputData);
 
         void printHeader();
 };

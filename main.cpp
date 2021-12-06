@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <cstdlib>
 
 #include "waveHeader.h"         // Header struct
 #include "WavFileIO.h"          // File IO class
@@ -84,6 +85,7 @@ main(int argc, char *argv[])
     switch (userInput[0])
     {
     case '1': // Normalization
+        cout << "Selected: Normalization" << endl;
         if (audioFile.getNumberOfChannels() == 1)
         {
             audioFile.setSoundDataRight(normalization.applyModule(audioFile.getSoundDataRight()));
@@ -96,19 +98,46 @@ main(int argc, char *argv[])
         break;
 
     case '2': // Echo
-        
+        cout << "Selected: Echo" << endl;
+        float gain;
+        int delay;
+
+        cout << "Please provide a gain > 1." << endl;
+        while (true)
+        {
+            cout << "Gain: ";
+            cin >> userInput;
+            if (atof(userInput) < 1)
+            {
+                gain = atof(userInput);
+                break;
+            }
+        }
+        cout << "Please provide a delay in miliseconds" << endl;
+        while (true)
+        {
+            cout << "delay: ";
+            cin >> userInput;
+            if (atoi(userInput) > 0)
+            {
+                delay = atoi(userInput);
+                break;
+            }
+        }
+
         if (audioFile.getNumberOfChannels() == 1)
         {
-            audioFile.setSoundDataRight(echo.applyModule(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataRight(echo.applyModule(audioFile.getSoundDataRight(),gain,delay));
         }
         else
         {
-            audioFile.setSoundDataRight(echo.applyModule(audioFile.getSoundDataRight()));
-            audioFile.setSoundDataLeft(echo.applyModule(audioFile.getSoundDataLeft()));
+            audioFile.setSoundDataRight(echo.applyModule(audioFile.getSoundDataRight(),gain,delay));
+            audioFile.setSoundDataLeft(echo.applyModule(audioFile.getSoundDataLeft(),gain,delay));
         }
         break;
 
-    case '3':
+    case '3': // GainAdjustment
+        cout << "Selected: GainAdjustment" << endl;
         if (audioFile.getNumberOfChannels() == 1)
         {
             audioFile.setSoundDataRight(gain_adjustment.applyModule(audioFile.getSoundDataRight()));
@@ -120,7 +149,8 @@ main(int argc, char *argv[])
         }
         break;
 
-    case '4':
+    case '4': // LowPassFilter
+        cout << "Selected: LowPassFilter" << endl;
         if (audioFile.getNumberOfChannels() == 1)
         {
             audioFile.setSoundDataRight(low_pass_filter.applyModule(audioFile.getSoundDataRight()));
@@ -132,7 +162,8 @@ main(int argc, char *argv[])
         }
         break;
 
-    // case '5':
+    // case '5': // Compression
+    //     cout << "Selected: Compression" << endl;
     //     if (audioFile.getNumberOfChannels() == 1)
     //     {
     //         audioFile.setSoundDataRight(compression.applyModule(audioFile.getSoundDataRight()));
