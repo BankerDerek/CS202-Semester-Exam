@@ -18,10 +18,10 @@ main(int argc, char *argv[])
 {
     // Class initializations
     WavFileIO audioFile;
-    LowPassFilter LPFilter;
-    GainAdjustment GainAjust;
-    Normalization Normal; 
-
+    LowPassFilter low_pass_filter;
+    GainAdjustment gain_adjustment;
+    Normalization normalization; 
+    Compression compression;
     Echo echo;
 
     // Intoduction
@@ -69,9 +69,85 @@ main(int argc, char *argv[])
     cout << "\t2 : Echo" << endl;
     cout << "\t3 : GainAdjustment" << endl;
     cout << "\t4 : LowPassFilter" << endl;
-    cout << "\t5 : Compression" << endl;
+    // cout << "\t5 : Compression" << endl;
+
+    while (true)
+    {
+        cout << "\tUser Input: ";
+        cin >> userInput;
+        if (userInput[0] >= '1' && userInput[0] <= '5' )
+        {
+            break;
+        }
+        cout << endl << "\tInvalid Input. Please try again." << endl;
+    }
+    switch (userInput[0])
+    {
+    case '1': // Normalization
+        if (audioFile.getNumberOfChannels() == 1)
+        {
+            audioFile.setSoundDataRight(normalization.applyModule(audioFile.getSoundDataRight()));
+        }
+        else
+        {
+            audioFile.setSoundDataRight(normalization.applyModule(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataLeft(normalization.applyModule(audioFile.getSoundDataLeft()));
+        }
+        break;
+
+    case '2': // Echo
+        //TODO parameter input
+        if (audioFile.getNumberOfChannels() == 1)
+        {
+            audioFile.setSoundDataRight(echo.applyModule(audioFile.getSoundDataRight()));
+        }
+        else
+        {
+            audioFile.setSoundDataRight(echo.applyModule(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataLeft(echo.applyModule(audioFile.getSoundDataLeft()));
+        }
+        break;
+
+    case '3':
+        if (audioFile.getNumberOfChannels() == 1)
+        {
+            audioFile.setSoundDataRight(gain_adjustment.applyModule(audioFile.getSoundDataRight()));
+        }
+        else
+        {
+            audioFile.setSoundDataRight(gain_adjustment.applyModule(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataLeft(gain_adjustment.applyModule(audioFile.getSoundDataLeft()));
+        }
+        break;
+
+    case '4':
+        if (audioFile.getNumberOfChannels() == 1)
+        {
+            audioFile.setSoundDataRight(low_pass_filter.applyModule(audioFile.getSoundDataRight()));
+        }
+        else
+        {
+            audioFile.setSoundDataRight(low_pass_filter.applyModule(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataLeft(low_pass_filter.applyModule(audioFile.getSoundDataLeft()));
+        }
+        break;
+
+    // case '5':
+    //     if (audioFile.getNumberOfChannels() == 1)
+    //     {
+    //         audioFile.setSoundDataRight(compression.applyModule(audioFile.getSoundDataRight()));
+    //     }
+    //     else
+    //     {
+    //         audioFile.setSoundDataRight(compression.applyModule(audioFile.getSoundDataRight()));
+    //         audioFile.setSoundDataLeft(compression.applyModule(audioFile.getSoundDataLeft()));
+    //     }
+    //     break;
 
     
+    default:
+        break;
+    }
 
 
     

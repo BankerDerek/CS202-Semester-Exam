@@ -21,6 +21,8 @@ class WavFileIO
 
         bool ingestFile (std::string inputFilePath);
 
+        int getNumberOfChannels();
+
         // Sets and Gets for the audio channels 
         std::vector<double> getSoundDataRight();
         std::vector<double> getSoundDataLeft();

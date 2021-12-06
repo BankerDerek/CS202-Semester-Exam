@@ -96,6 +96,12 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
     return false;
 }
 
+// Gets the number of audio channels
+int getNumberOfChannels()
+{
+    return waveHeader.num_channels;
+}
+
 // Sets and Gets for the audio channels 
 std::vector<double> WavFileIO::getSoundDataRight() 
 {

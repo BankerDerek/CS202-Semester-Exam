@@ -2,5 +2,6 @@
 
 class Echo
 {
-    std::vector<float> applyModule(const std::vector<float>& input, float gain, int delay);
+    public:
+        std::vector<float> applyModule(const std::vector<float>& input, float gain, int delay);
 };
