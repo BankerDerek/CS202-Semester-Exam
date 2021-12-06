@@ -125,6 +125,9 @@ main(int argc, char *argv[])
             }
         }
 
+        delay = 
+
+
         if (audioFile.getNumberOfChannels() == 1)
         {
             audioFile.setSoundDataRight(echo.applyModule(audioFile.getSoundDataRight(),gain,delay));
