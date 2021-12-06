@@ -1,7 +1,6 @@
 //Connor Riche
 //GainAdjustment.cpp file
-#ifndef GAINADJUSTMENT_H
-#define GAINADJUSTMENT_H
+
 #include "GainAdjustment.h"
 #include <vector>
 
@@ -24,4 +23,3 @@ void GainAdjustment::setAdjustNumber(float adjust){
         adjustNumber = adjust;
     }    
 
-#endif
