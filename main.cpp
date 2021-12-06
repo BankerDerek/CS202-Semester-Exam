@@ -16,7 +16,7 @@
 
 using namespace std;
 
-main(int argc, char *argv[])
+int main()
 {
     // Class initializations
     WavFileIO audioFile;
