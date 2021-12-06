@@ -166,18 +166,18 @@ main(int argc, char *argv[])
         }
         break;
 
-    // case '5': // Compression
-    //     cout << "Selected: Compression" << endl;
-    //     if (audioFile.getNumberOfChannels() == 1)
-    //     {
-    //         audioFile.setSoundDataRight(compression.applyModule(audioFile.getSoundDataRight()));
-    //     }
-    //     else
-    //     {
-    //         audioFile.setSoundDataRight(compression.applyModule(audioFile.getSoundDataRight()));
-    //         audioFile.setSoundDataLeft(compression.applyModule(audioFile.getSoundDataLeft()));
-    //     }
-    //     break;
+    case '5': // Compression
+         cout << "Selected: Compression" << endl;
+         if (audioFile.getNumberOfChannels() == 1)
+         {
+             audioFile.setSoundDataRight(compression.compressData(audioFile.getSoundDataRight()));
+         }
+         else
+         {
+             audioFile.setSoundDataRight(compression.compressData(audioFile.getSoundDataRight()));
+             audioFile.setSoundDataLeft(compression.compressData(audioFile.getSoundDataLeft()));
+         }
+         break;
 
     
     default:
