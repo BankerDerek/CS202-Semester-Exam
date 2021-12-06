@@ -8,13 +8,13 @@
 #include <vector>
 
 class Normalization{
-	float largestValue = 0;
+    float largestValue = 0;
     float multiplier;
-	std::vector<float> modefiedData;
+    std::vector<float> modifiedData;
 public:
-	float findMaxVal(std::vector<float>, float);
-    float findMultiplier(float, float);
-	std::vector<float> normalizeData(std::vector <float>, float);
+    void findMaxVal(std::vector<float> data);
+    void findMultiplier();
+    std::vector<float> normalizeData(std::vector<float> data);
 };
 
 #endif //NORMALIZATION_H
