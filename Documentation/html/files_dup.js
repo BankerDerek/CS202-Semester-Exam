@@ -10,7 +10,7 @@ var files_dup =
     [ "Echo.h", "Echo_8h.html", [
       [ "Echo", "classEcho.html", "classEcho" ]
     ] ],
-    [ "GainAdjustment.cpp", "GainAdjustment_8cpp.html", "GainAdjustment_8cpp" ],
+    [ "GainAdjustment.cpp", "GainAdjustment_8cpp.html", null ],
     [ "GainAdjustment.h", "GainAdjustment_8h.html", [
       [ "GainAdjustment", "classGainAdjustment.html", "classGainAdjustment" ]
     ] ],
@@ -19,8 +19,8 @@ var files_dup =
       [ "LowPassFilter", "classLowPassFilter.html", "classLowPassFilter" ]
     ] ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
-    [ "normalization.cpp", "normalization_8cpp.html", null ],
-    [ "normalization.h", "normalization_8h.html", [
+    [ "Normalization.cpp", "Normalization_8cpp.html", null ],
+    [ "Normalization.h", "Normalization_8h.html", [
       [ "Normalization", "classNormalization.html", "classNormalization" ]
     ] ],
     [ "waveHeader.h", "waveHeader_8h.html", [

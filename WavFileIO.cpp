@@ -10,16 +10,15 @@
 #include "WavFileIO.h"
 
 
-std::string filePath;                   // Holds the provided file path
+std::string filePath;                   //< Holds the provided file path
 
-struct WaveHeader waveHeader;           // Holds the file header
+struct WaveHeader waveHeader;           //< Holds the file header
 
-std::vector<float> soundDataRight;     // Right channel audio data in stereo, also used if mono
-std::vector<float> soundDataLeft;      // Left channel audio data in stereo
+std::vector<float> soundDataRight;     //< Right channel audio data in stereo, also used if mono
+std::vector<float> soundDataLeft;      //< Left channel audio data in stereo
 
 /// Makes sure the file is valid
-///
-/// Returns true if the file exists and has a ".wav" extension at the end
+/** Returns true if the file exists and has a ".wav" extension at the end */
 /// @param "string inputFilePath" Contains the location of the file to validate
 /// @return Returns the state of the file. 
 bool WavFileIO::validateFile(std::string inputFilePath)
@@ -101,7 +100,10 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
     return false;
 }
 
-// std::string WavFileIO::constructName(std)
+// std::string WavFileIO::constructName(std::string providedName)
+// {
+
+// }
 
 
 // Get's the sample rate
