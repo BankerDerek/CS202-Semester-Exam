@@ -12,7 +12,7 @@ private:
 public:
     std::vector<float> lowPassVector(std::vector<float> waveOriginal);
     std::vector<float> delaySignal(std::vector<float> waveOriginal);
-    float multiply(float currentWave, float sample);
+    float multiply(float currentWave, float currentSample);
     float add(float originalWave, float currentWave);
     //void setSample(vector<double> newSample);
     void setGain(float newGain);

@@ -26,8 +26,8 @@ std::vector<float> LowPassFilter::delaySignal(std::vector<float> waveOriginal){
     return delayedSignal;
 }
 
-float LowPassFilter::multiply(float currentWave, float sample){
-    return currentWave*(sample*gain);
+float LowPassFilter::multiply(float currentWave, float currentSample){
+    return currentWave*(currentSample*gain);
 }    
 
 float LowPassFilter::add(float originalWave, float currentWave){
