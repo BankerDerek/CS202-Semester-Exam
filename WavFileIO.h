@@ -5,6 +5,7 @@
 
 #include "waveHeader.h"
 
+/// Handles all the input and output of the wav files
 class WavFileIO
 {
     private:
