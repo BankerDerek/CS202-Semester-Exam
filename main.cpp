@@ -12,6 +12,7 @@
 #include "Normalization.h"      // Sultan
 #include "Compression.h"        // Sultan
 #include "Echo.h"               // Derek
+#include "AudioProcessor.h"     //Connor
 
 using namespace std;
 
@@ -88,12 +89,12 @@ main(int argc, char *argv[])
         cout << "Selected: Normalization" << endl;
         if (audioFile.getNumberOfChannels() == 1)
         {
-            audioFile.setSoundDataRight(normalization.applyModule(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataRight(normalization.normalizeData(audioFile.getSoundDataRight()));
         }
         else
         {
-            audioFile.setSoundDataRight(normalization.applyModule(audioFile.getSoundDataRight()));
-            audioFile.setSoundDataLeft(normalization.applyModule(audioFile.getSoundDataLeft()));
+            audioFile.setSoundDataRight(normalization.normalizeData(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataLeft(normalization.normalizeData(audioFile.getSoundDataLeft()));
         }
         break;
 
@@ -143,12 +144,12 @@ main(int argc, char *argv[])
         cout << "Selected: GainAdjustment" << endl;
         if (audioFile.getNumberOfChannels() == 1)
         {
-            audioFile.setSoundDataRight(gain_adjustment.applyModule(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataRight(gain_adjustment.adjustVector(audioFile.getSoundDataRight()));
         }
         else
         {
-            audioFile.setSoundDataRight(gain_adjustment.applyModule(audioFile.getSoundDataRight()));
-            audioFile.setSoundDataLeft(gain_adjustment.applyModule(audioFile.getSoundDataLeft()));
+            audioFile.setSoundDataRight(gain_adjustment.adjustVector(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataLeft(gain_adjustment.adjustVector(audioFile.getSoundDataLeft()));
         }
         break;
 
@@ -156,12 +157,12 @@ main(int argc, char *argv[])
         cout << "Selected: LowPassFilter" << endl;
         if (audioFile.getNumberOfChannels() == 1)
         {
-            audioFile.setSoundDataRight(low_pass_filter.applyModule(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataRight(low_pass_filter.lowPassVector(audioFile.getSoundDataRight()));
         }
         else
         {
-            audioFile.setSoundDataRight(low_pass_filter.applyModule(audioFile.getSoundDataRight()));
-            audioFile.setSoundDataLeft(low_pass_filter.applyModule(audioFile.getSoundDataLeft()));
+            audioFile.setSoundDataRight(low_pass_filter.lowPassVector(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataLeft(low_pass_filter.lowPassVector(audioFile.getSoundDataLeft()));
         }
         break;
 

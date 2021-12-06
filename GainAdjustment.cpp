@@ -3,21 +3,20 @@
 #ifndef GAINADJUSTMENT_H
 #define GAINADJUSTMENT_H
 #include "GainAdjustment.h"
-#include <iostream>
 #include <vector>
 
 
 std::vector<float> GainAdjustment::adjustVector(std::vector<float> waveOriginal){
         std::vector<float> finalWave;
         for(int i=0; i < sizeof(waveOriginal); i++){
-            finalWave[i] = adjustment(waveOriginal[i], adjustNumber);
+            finalWave[i] = adjustment(waveOriginal[i]);
         }
         return finalWave;
     }
 
     
 
-float GainAdjustment::adjustment(float value, float adjustNumber){
+float GainAdjustment::adjustment(float value){
         return value * adjustNumber;
     }    
 
