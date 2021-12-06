@@ -20,11 +20,11 @@ int main()
 {
     // Class initializations
     WavFileIO audioFile;
-    LowPassFilter low_pass_filter;
-    GainAdjustment gain_adjustment;
-    Normalization normalization; 
-    Compression compression;
-    Echo echo;
+    Process low_pass_filter;
+    Process gain_adjustment;
+    Process normalization; 
+    Process compression;
+    Process echo;
 
     // Intoduction
     cout << endl << "Initializing Audio Editor..." << endl;
