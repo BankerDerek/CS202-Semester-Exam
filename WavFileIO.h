@@ -22,6 +22,8 @@ class WavFileIO
 
         bool ingestFile (std::string inputFilePath);
 
+        std::string constructName(std::string providedName);
+
         // Gets the sample rate
         int getSampleRate();
 

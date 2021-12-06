@@ -29,6 +29,8 @@ bool WavFileIO::validateFile(std::string inputFilePath)
 
 bool WavFileIO::ingestFile (std::string inputFilePath)
 {
+    filePath = inputFilePath; 
+    
     // Checks if the file exists and has a ".wav" extension
     if (!WavFileIO::validateFile(inputFilePath))
     {
@@ -100,10 +102,10 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
     return false;
 }
 
-// std::string WavFileIO::constructName(std::string providedName)
-// {
-
-// }
+std::string WavFileIO::constructName(std::string providedName)
+{
+    return filePath.substr(0,filePath.find_last_of("\\") + 1) + providedName + ".wav";
+}
 
 
 // Get's the sample rate
