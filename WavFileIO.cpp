@@ -14,8 +14,8 @@ std::string filePath;                   // Holds the provided file path
 
 struct WaveHeader waveHeader;           // Holds the file header
 
-std::vector<double> soundDataRight;     // Right channel audio data in stereo, also used if mono
-std::vector<double> soundDataLeft;      // Left channel audio data in stereo
+std::vector<float> soundDataRight;     // Right channel audio data in stereo, also used if mono
+std::vector<float> soundDataLeft;      // Left channel audio data in stereo
 
 bool WavFileIO::validateFile(std::string inputFilePath)
 {
@@ -103,20 +103,20 @@ int getNumberOfChannels()
 }
 
 // Sets and Gets for the audio channels 
-std::vector<double> WavFileIO::getSoundDataRight() 
+std::vector<float> WavFileIO::getSoundDataRight() 
 {
     return soundDataRight;
 }
-std::vector<double> WavFileIO::getSoundDataLeft() 
+std::vector<float> WavFileIO::getSoundDataLeft() 
 {
     return soundDataLeft;
 }
-void WavFileIO::setSoundDataRight (std::vector<double> inputData)
+void WavFileIO::setSoundDataRight (std::vector<float> inputData)
 {
     soundDataRight.clear();
     soundDataRight = inputData;
 }
-void WavFileIO::setSoundDataLeft (std::vector<double> inputData)
+void WavFileIO::setSoundDataLeft (std::vector<float> inputData)
 {
     soundDataLeft.clear();
     soundDataLeft = inputData;
