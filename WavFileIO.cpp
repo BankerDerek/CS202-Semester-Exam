@@ -20,6 +20,8 @@ std::vector<float> soundDataLeft;      // Left channel audio data in stereo
 /// Makes sure the file is valid
 ///
 /// Returns true if the file exists and has a ".wav" extension at the end
+/// @param "string inputFilePath" Contains the location of the file to validate
+/// @return Returns the state of the file. 
 bool WavFileIO::validateFile(std::string inputFilePath)
 {
     std::ifstream infile(inputFilePath);
@@ -98,6 +100,8 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
     }
     return false;
 }
+
+
 
 
 // Get's the sample rate

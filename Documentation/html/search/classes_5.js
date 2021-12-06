@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['waveheader_0',['WaveHeader',['../structWaveHeader.html',1,'']]],
-  ['wavfileio_1',['WavFileIO',['../classWavFileIO.html',1,'']]]
+  ['process_0',['Process',['../classProcess.html',1,'']]]
 ];

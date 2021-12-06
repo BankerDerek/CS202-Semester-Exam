@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['normalizedata_0',['normalizeData',['../classNormalization.html#a9c8eda074ff81dd64c80aa466b48ff80',1,'Normalization']]]
+  ['main_0',['main',['../main_8cpp.html#ae0665038b72011f5c680c660fcb59459',1,'main.cpp']]],
+  ['multiply_1',['multiply',['../classLowPassFilter.html#a0c9e37d0f4dd097cc093db4ec78bf04e',1,'LowPassFilter']]]
 ];

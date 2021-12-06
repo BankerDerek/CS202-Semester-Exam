@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lowpassfilter_0',['LowPassFilter',['../classLowPassFilter.html',1,'']]]
+  ['gainadjustment_0',['GainAdjustment',['../classGainAdjustment.html',1,'']]]
 ];

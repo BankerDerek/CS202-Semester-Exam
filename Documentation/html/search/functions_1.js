@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['delaysignal_0',['delaySignal',['../classLowPassFilter.html#a246a4cbcc0a2dd494569d249066686dd',1,'LowPassFilter']]]
+  ['compressdata_0',['compressData',['../classCompression.html#a56ee6b0a764cab1a9cacd9d34d26e2dc',1,'Compression']]]
 ];

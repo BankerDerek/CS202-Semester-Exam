@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['process_0',['Process',['../classProcess.html',1,'']]]
+  ['normalization_0',['Normalization',['../classNormalization.html',1,'']]]
 ];

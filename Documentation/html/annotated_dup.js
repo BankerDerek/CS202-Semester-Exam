@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "Compression", "classCompression.html", "classCompression" ],
     [ "Echo", "classEcho.html", "classEcho" ],
     [ "GainAdjustment", "classGainAdjustment.html", "classGainAdjustment" ],
     [ "LowPassFilter", "classLowPassFilter.html", "classLowPassFilter" ],

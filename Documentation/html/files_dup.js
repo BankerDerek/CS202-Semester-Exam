@@ -5,7 +5,7 @@ var files_dup =
       [ "Process", "classProcess.html", null ]
     ] ],
     [ "Compression.cpp", "Compression_8cpp.html", null ],
-    [ "Compression.h", "Compression_8h.html", null ],
+    [ "Compression.h", "Compression_8h.html", "Compression_8h" ],
     [ "Echo.cpp", "Echo_8cpp.html", "Echo_8cpp" ],
     [ "Echo.h", "Echo_8h.html", [
       [ "Echo", "classEcho.html", "classEcho" ]
@@ -14,7 +14,7 @@ var files_dup =
     [ "GainAdjustment.h", "GainAdjustment_8h.html", [
       [ "GainAdjustment", "classGainAdjustment.html", "classGainAdjustment" ]
     ] ],
-    [ "LowPassFilter.cpp", "LowPassFilter_8cpp.html", "LowPassFilter_8cpp" ],
+    [ "LowPassFilter.cpp", "LowPassFilter_8cpp.html", null ],
     [ "LowPassFilter.h", "LowPassFilter_8h.html", [
       [ "LowPassFilter", "classLowPassFilter.html", "classLowPassFilter" ]
     ] ],

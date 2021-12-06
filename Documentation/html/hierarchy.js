@@ -1,6 +1,6 @@
 var hierarchy =
 [
-    [ "Compression", null, [
+    [ "Compression", "classCompression.html", [
       [ "Process", "classProcess.html", null ]
     ] ],
     [ "Echo", "classEcho.html", [
