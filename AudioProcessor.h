@@ -5,7 +5,7 @@
 #define AUDIOPROCESSOR_H
 #include "Echo.h"
 #include "GainAdjustment.h"
-#include "normalization.h"
+#include "Normalization.h"
 #include "Compression.h"
 #include "LowPassFilter.h"
 
