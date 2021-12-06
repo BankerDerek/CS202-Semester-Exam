@@ -1,15 +1,18 @@
+//Connor Riche
+//Compression.cpp file
+
 #ifndef COMPRESSION_H
 #define COMPRESSION_H
 
-#include <iostream>
 #include <vector>
 
-const float rate = 1.2;
-
 class Compression{
-    std::vector<float> compressedData;
+private:
+    int compFactor = 2;
+    std::vector<float> finalData;
 public:
-    std::vector<float> compressData(std::vector<float>);
+    std::vector<float> compressData(std::vector<float> waveOriginal);
+    void setCompFactor(int newFactor);
 };
 
-#endif //COMPRESSION_H
+#endif
