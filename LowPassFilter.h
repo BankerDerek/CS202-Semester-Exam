@@ -1,5 +1,7 @@
 //Connor Riche
 //LowPassFilter.h file
+#ifndef LOWPASSFILTER_H
+#define LOWPASSFILTER_H
 #include <iostream>
 #include <vector>
 
@@ -18,3 +20,5 @@ public:
     void setGain(float newGain);
     void setDelay(float newDelay);
 };
+
+#endif

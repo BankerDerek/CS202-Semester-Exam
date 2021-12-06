@@ -1,7 +1,5 @@
 //Connor Riche
 //LowPassFilter.cpp file
-#ifndef LOWPASSFILTER_H
-#define LOWPASSFILTER_H
 #include "LowPassFilter.h"
 #include <iostream>
 #include <vector>
@@ -49,4 +47,3 @@ void LowPassFilter::setDelay(float newDelay){
 }
     
 
-#endif

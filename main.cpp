@@ -9,7 +9,7 @@
 
 #include "LowPassFilter.h"      // Connor
 #include "GainAdjustment.h"     // Connor
-#include "Normalization.h"      // Sultan
+#include "normalization.h"      // Sultan
 #include "Compression.h"        // Sultan
 #include "Echo.h"               // Derek
 #include "AudioProcessor.h"     //Connor
@@ -23,7 +23,7 @@ main(int argc, char *argv[])
     LowPassFilter low_pass_filter;
     GainAdjustment gain_adjustment;
     Normalization normalization; 
-    // Compression compression;
+    Compression compression;
     Echo echo;
 
     // Intoduction
