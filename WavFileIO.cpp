@@ -101,17 +101,17 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
     return false;
 }
 
-
+// std::string WavFileIO::constructName(std)
 
 
 // Get's the sample rate
-int getSampleRate()
+int WavFileIO::getSampleRate()
 {
     return waveHeader.sample_rate;
 }
 
 // Gets the number of audio channels
-int getNumberOfChannels()
+int WavFileIO::getNumberOfChannels()
 {
     return waveHeader.num_channels;
 }
