@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printheader_0',['printHeader',['../classWavFileIO.html#aae979b82d6003e3fdf3a42bc2ab759c3',1,'WavFileIO']]]
+  ['normalizedata_0',['normalizeData',['../classNormalization.html#a9c8eda074ff81dd64c80aa466b48ff80',1,'Normalization']]]
 ];

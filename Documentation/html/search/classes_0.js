@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['echo_0',['Echo',['../classEcho.html',1,'']]]
+  ['compression_0',['Compression',['../classCompression.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalization_0',['Normalization',['../classNormalization.html',1,'']]]
+  ['lowpassfilter_0',['LowPassFilter',['../classLowPassFilter.html',1,'']]]
 ];
