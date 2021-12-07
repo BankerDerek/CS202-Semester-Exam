@@ -13,8 +13,8 @@ class LowPassFilter{
 private:
     std::vector<float> finalWave;
     std::vector<float> sample;
-    float gain = 1;
-    float delay = 1;
+    float gain = 2;
+    float delay = 2;
 public:
     ///Runs a wave through a low pass filter
     ///Takes a vector and modifies it based on a low pass filter diagram. This involves multiplying the wave by the delayed version of itself and adding it back to the original wave.
