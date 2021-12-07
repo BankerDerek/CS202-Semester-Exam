@@ -1,3 +1,4 @@
+//Sultonbek Kholmatov
 //Connor Riche
 //Compression.cpp file
 #include "Compression.h"
