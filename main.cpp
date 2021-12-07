@@ -179,11 +179,25 @@ int main()
          }
          break;
 
-    
     default:
+        cout << "You somehow have reached this, it should be possible, but here you are." << endl;
         break;
     }
+    cout << "\t Module application complete..." << endl << endl;
 
+    cout << "Please provide a file name" << endl << "Note: file name cannot contain any of the following: \"<>,:/\\|?*\"" << endl;
+    while (true)
+    {
+        cout << "\tFile name: ";
+        cin >> userInput;
+        if (audioFile.validateName(userInput))
+        {
+            cout << "\tExporting file to: \"" << audioFile.constructName(userInput) << "\"" << endl;
+            break;
+        }
+    }
+    audioFile.exportFile(userInput);
+    cout << "\tExport Complete..." << endl;
 
-    
+    return 1;
 }

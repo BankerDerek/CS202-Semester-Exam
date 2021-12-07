@@ -104,6 +104,22 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
     return false;
 }
 
+bool WavFileIO::validateName(std::string providedName)
+{
+    char nonValidCharacter[] = {'<','>',':','"','/','\\','|','?','*'};
+    for (int i = 0; i < providedName.length(); i++)
+    {
+        for (int j = 0; j < sizeof(nonValidCharacter); j++)
+        {
+            if (providedName[i] == nonValidCharacter[j])
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 std::string WavFileIO::constructName(std::string providedName)
 {
     return filePath.substr(0,filePath.find_last_of("\\") + 1) + providedName + ".wav";
@@ -112,7 +128,7 @@ std::string WavFileIO::constructName(std::string providedName)
 
  bool WavFileIO::exportFile(std::string intendedFileName)
  {
-    std::ofstream result("student.dat", std::ios::out | std::ios::binary);
+    std::ofstream result(constructName(intendedFileName), std::ios::out | std::ios::binary);
     
     if (result.is_open())
     {

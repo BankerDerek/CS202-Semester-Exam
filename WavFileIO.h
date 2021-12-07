@@ -22,9 +22,11 @@ class WavFileIO
 
         bool ingestFile (std::string inputFilePath);
 
+        bool validateName(std::string providedName);
+
         std::string constructName(std::string providedName);
 
-        bool WavFileIO::exportFile(std::string intendedFileName);
+        bool exportFile(std::string intendedFileName);
 
         // Gets the sample rate
         int getSampleRate();
