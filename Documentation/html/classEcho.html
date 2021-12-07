@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('classEcho.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 
+<p>Class for <a class="el" href="classEcho.html" title="Class for Echo.">Echo</a>.  
+ <a href="classEcho.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Echo_8h_source.html">Echo.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Echo:</div>
@@ -113,9 +116,13 @@ Inheritance diagram for Echo:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0f5cd166fb6d9cd09fe9c45f91454ee8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEcho.html#a0f5cd166fb6d9cd09fe9c45f91454ee8">applyModule</a> (const std::vector&lt; float &gt; &amp;input, float gain, int delay)</td></tr>
+<tr class="memdesc:a0f5cd166fb6d9cd09fe9c45f91454ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function adds an <a class="el" href="classEcho.html" title="Class for Echo.">Echo</a> Takes in a vector and changes values to give the resulting sound an echo.  <a href="classEcho.html#a0f5cd166fb6d9cd09fe9c45f91454ee8">More...</a><br /></td></tr>
 <tr class="separator:a0f5cd166fb6d9cd09fe9c45f91454ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class for <a class="el" href="classEcho.html" title="Class for Echo.">Echo</a>. </p>
+<p >Class that holds a function that adds an echo effect to a sound file. The Function takes in a vector and then passes each element in the vector through a process. The process looks at if the iteration is greater then the preset delay value. If the iteration is greater than the delay variable, the value entered in the output vector is the original value in a specific vector location multiplied by the gain variable. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0f5cd166fb6d9cd09fe9c45f91454ee8" name="a0f5cd166fb6d9cd09fe9c45f91454ee8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f5cd166fb6d9cd09fe9c45f91454ee8">&#9670;&nbsp;</a></span>applyModule()</h2>
 
@@ -147,6 +154,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Function adds an <a class="el" href="classEcho.html" title="Class for Echo.">Echo</a> Takes in a vector and changes values to give the resulting sound an echo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>is the original vector </td></tr>
+    <tr><td class="paramname">gain</td><td>is the predetermined value to be multiplied with vector elements that are chosen to produce and echo </td></tr>
+    <tr><td class="paramname">delay</td><td>is the amount of vector spaces chosen to reinsert a value to produce the echo </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
