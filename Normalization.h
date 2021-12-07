@@ -11,7 +11,8 @@
 ///The class takes a vector with the data from a sound file and normalizes it.
 ///It does this by finding the largest value in the data which is used to find a constant value. Then every single value in the data is multiplied by that constant value.
 ///This will essentially normalize the audio file by maximizing the amplitude of the final waveform.
-struct Normalization{
+class Normalization{
+public:
 	///Normalize the vector
 	///
 	///Returns a normalized vector by taking in
