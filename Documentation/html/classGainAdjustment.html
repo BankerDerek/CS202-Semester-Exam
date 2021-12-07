@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('classGainAdjustment.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
+<p>Class to adjust data values by a constant.  
+ <a href="classGainAdjustment.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="GainAdjustment_8h_source.html">GainAdjustment.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for GainAdjustment:</div>
@@ -106,20 +109,26 @@ Inheritance diagram for GainAdjustment:</div>
  <div class="center">
   <img src="classGainAdjustment.png" usemap="#GainAdjustment_map" alt=""/>
   <map id="GainAdjustment_map" name="GainAdjustment_map">
-<area href="classProcess.html" alt="Process" shape="rect" coords="0,56,99,80"/>
+<area href="classProcess.html" title="Processor for wave file data." alt="Process" shape="rect" coords="0,56,99,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:affafd578520c1dc0793e0fcf0c00252a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGainAdjustment.html#affafd578520c1dc0793e0fcf0c00252a">adjustVector</a> (std::vector&lt; float &gt; waveOriginal)</td></tr>
+<tr class="memdesc:affafd578520c1dc0793e0fcf0c00252a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjusts each value in a data section Takes a value from the vector and multiplies it by the variable holding the constant value the data set is being adjusted by.  <a href="classGainAdjustment.html#affafd578520c1dc0793e0fcf0c00252a">More...</a><br /></td></tr>
 <tr class="separator:affafd578520c1dc0793e0fcf0c00252a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7c89b25e61bd643680b01ab4ece3574"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGainAdjustment.html#aa7c89b25e61bd643680b01ab4ece3574">adjustment</a> (float value)</td></tr>
+<tr class="memdesc:aa7c89b25e61bd643680b01ab4ece3574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplication function Function the adjustVector function uses to change each value.  <a href="classGainAdjustment.html#aa7c89b25e61bd643680b01ab4ece3574">More...</a><br /></td></tr>
 <tr class="separator:aa7c89b25e61bd643680b01ab4ece3574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a5b915c3a6a8c7390561c0d69df402d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGainAdjustment.html#a5a5b915c3a6a8c7390561c0d69df402d">setAdjustNumber</a> (float adjust)</td></tr>
+<tr class="memdesc:a5a5b915c3a6a8c7390561c0d69df402d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new adjustment value Takes in a value and replaces the value held by the "adjustNumber" variable.  <a href="classGainAdjustment.html#a5a5b915c3a6a8c7390561c0d69df402d">More...</a><br /></td></tr>
 <tr class="separator:a5a5b915c3a6a8c7390561c0d69df402d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class to adjust data values by a constant. </p>
+<p ><a class="el" href="classGainAdjustment.html" title="Class to adjust data values by a constant.">GainAdjustment</a> class has a function that changes the data in a wave file. The class can adjust all the values in a data set by a certain amount while keeping them all in proportion with each other. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa7c89b25e61bd643680b01ab4ece3574" name="aa7c89b25e61bd643680b01ab4ece3574"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7c89b25e61bd643680b01ab4ece3574">&#9670;&nbsp;</a></span>adjustment()</h2>
 
@@ -135,6 +144,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Multiplication function Function the adjustVector function uses to change each value. </p>
+<p >"adjustment" function takes single float value and multiplies it by the "adjust" value </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>is the specific value at the current location in the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the product of the data value and the adjustment value </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>the variable "adjustNumber" can be changed by mentioned setter function </dd></dl>
 
 </div>
 </div>
@@ -154,6 +173,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adjusts each value in a data section Takes a value from the vector and multiplies it by the variable holding the constant value the data set is being adjusted by. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waveOriginal</td><td>is the vector holding the data from the wave file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector filled with the modified data </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The adjustment value can be changed with the setter function setAdjustNumber (default number is 3) </dd></dl>
+
 </div>
 </div>
 <a id="a5a5b915c3a6a8c7390561c0d69df402d" name="a5a5b915c3a6a8c7390561c0d69df402d"></a>
@@ -171,6 +200,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets a new adjustment value Takes in a value and replaces the value held by the "adjustNumber" variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">adjust</td><td>holds the new value for adjustNumber to be assigned </td></tr>
+    <tr><td class="paramname">returns</td><td>void </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

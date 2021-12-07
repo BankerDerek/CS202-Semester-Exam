@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Semester Project: WavFileIO.h Source File</title>
+<title>Semester Project: C:/TEMP/Programming/School/C++/CS202-Semester-Project/WavFileIO.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('WavFileIO_8h_source.html',''); initRes
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">WavFileIO.h</div></div>
+  <div class="headertitle"><div class="title">C:/TEMP/Programming/School/C++/CS202-Semester-Project/WavFileIO.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="WavFileIO_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -118,36 +118,42 @@ $(document).ready(function(){initNavTree('WavFileIO_8h_source.html',''); initRes
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classWavFileIO.html#adecb7bee6f7e9cd09a77ca84ade064a3">ingestFile</a> (std::string inputFilePath);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        std::string <a class="code hl_function" href="classWavFileIO.html#a78040e9bb41376f19e32a547850fa234">constructName</a>(std::string providedName);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classWavFileIO.html#ae97db8313fed19e69ff377b5dc622b13">validateName</a>(std::string providedName);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="comment">// Gets the sample rate</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classWavFileIO.html#a9bed7a9961aa92994ac95cc71204a09b">getSampleRate</a>();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="comment">// Gets number of channels</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classWavFileIO.html#a6255bbce90a8b1871fcbd4c6f34329bb">getNumberOfChannels</a>();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="comment">// Sets and Gets for the audio channels </span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        std::vector&lt;float&gt; <a class="code hl_function" href="classWavFileIO.html#a12f4aabc7475fb4765b280c551cc8114">getSoundDataRight</a>();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        std::vector&lt;float&gt; <a class="code hl_function" href="classWavFileIO.html#a39c3b6e64ca67b0b2b88b5585c822ea7">getSoundDataLeft</a>();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classWavFileIO.html#af05cc16fcc4f5f9e9b2fdf4e71895136">setSoundDataRight</a> (std::vector&lt;float&gt; inputData);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classWavFileIO.html#ad15f9f3450d2ed5aa35c689c2e0a4012">setSoundDataLeft</a> (std::vector&lt;float&gt; inputData);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classWavFileIO.html#aae979b82d6003e3fdf3a42bc2ab759c3">printHeader</a>();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        std::string <a class="code hl_function" href="classWavFileIO.html#a78040e9bb41376f19e32a547850fa234">constructName</a>(std::string providedName);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classWavFileIO.html#a39b8aa097dca529d6ad71d0cde77e5c0">exportFile</a>(std::string intendedFileName);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="comment">// Gets the sample rate</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classWavFileIO.html#a9bed7a9961aa92994ac95cc71204a09b">getSampleRate</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="comment">// Gets number of channels</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classWavFileIO.html#a6255bbce90a8b1871fcbd4c6f34329bb">getNumberOfChannels</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">// Sets and Gets for the audio channels </span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        std::vector&lt;float&gt; <a class="code hl_function" href="classWavFileIO.html#a12f4aabc7475fb4765b280c551cc8114">getSoundDataRight</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        std::vector&lt;float&gt; <a class="code hl_function" href="classWavFileIO.html#a39c3b6e64ca67b0b2b88b5585c822ea7">getSoundDataLeft</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classWavFileIO.html#af05cc16fcc4f5f9e9b2fdf4e71895136">setSoundDataRight</a> (std::vector&lt;float&gt; inputData);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classWavFileIO.html#ad15f9f3450d2ed5aa35c689c2e0a4012">setSoundDataLeft</a> (std::vector&lt;float&gt; inputData);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classWavFileIO.html#aae979b82d6003e3fdf3a42bc2ab759c3">printHeader</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
 <div class="ttc" id="aWavFileIO_8cpp_html_a360808ced9e57ed5e4a9b23edd1cc597"><div class="ttname"><a href="WavFileIO_8cpp.html#a360808ced9e57ed5e4a9b23edd1cc597">soundDataLeft</a></div><div class="ttdeci">std::vector&lt; float &gt; soundDataLeft</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:18</div></div>
 <div class="ttc" id="aWavFileIO_8cpp_html_a5e778dedeed9cdd573cf799fd936d1e3"><div class="ttname"><a href="WavFileIO_8cpp.html#a5e778dedeed9cdd573cf799fd936d1e3">soundDataRight</a></div><div class="ttdeci">std::vector&lt; float &gt; soundDataRight</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:17</div></div>
 <div class="ttc" id="aWavFileIO_8cpp_html_a98dec03c148ef2457822021185a21087"><div class="ttname"><a href="WavFileIO_8cpp.html#a98dec03c148ef2457822021185a21087">waveHeader</a></div><div class="ttdeci">struct WaveHeader waveHeader</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:15</div></div>
 <div class="ttc" id="aclassWavFileIO_html"><div class="ttname"><a href="classWavFileIO.html">WavFileIO</a></div><div class="ttdoc">Handles all the input and output of the wav files.</div><div class="ttdef"><b>Definition:</b> WavFileIO.h:10</div></div>
-<div class="ttc" id="aclassWavFileIO_html_a12f4aabc7475fb4765b280c551cc8114"><div class="ttname"><a href="classWavFileIO.html#a12f4aabc7475fb4765b280c551cc8114">WavFileIO::getSoundDataRight</a></div><div class="ttdeci">std::vector&lt; float &gt; getSoundDataRight()</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:124</div></div>
-<div class="ttc" id="aclassWavFileIO_html_a39c3b6e64ca67b0b2b88b5585c822ea7"><div class="ttname"><a href="classWavFileIO.html#a39c3b6e64ca67b0b2b88b5585c822ea7">WavFileIO::getSoundDataLeft</a></div><div class="ttdeci">std::vector&lt; float &gt; getSoundDataLeft()</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:128</div></div>
+<div class="ttc" id="aclassWavFileIO_html_a12f4aabc7475fb4765b280c551cc8114"><div class="ttname"><a href="classWavFileIO.html#a12f4aabc7475fb4765b280c551cc8114">WavFileIO::getSoundDataRight</a></div><div class="ttdeci">std::vector&lt; float &gt; getSoundDataRight()</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:216</div></div>
+<div class="ttc" id="aclassWavFileIO_html_a39b8aa097dca529d6ad71d0cde77e5c0"><div class="ttname"><a href="classWavFileIO.html#a39b8aa097dca529d6ad71d0cde77e5c0">WavFileIO::exportFile</a></div><div class="ttdeci">bool exportFile(std::string intendedFileName)</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:135</div></div>
+<div class="ttc" id="aclassWavFileIO_html_a39c3b6e64ca67b0b2b88b5585c822ea7"><div class="ttname"><a href="classWavFileIO.html#a39c3b6e64ca67b0b2b88b5585c822ea7">WavFileIO::getSoundDataLeft</a></div><div class="ttdeci">std::vector&lt; float &gt; getSoundDataLeft()</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:220</div></div>
 <div class="ttc" id="aclassWavFileIO_html_a593f67696f943f09ad3ee4e8fdbbc319"><div class="ttname"><a href="classWavFileIO.html#a593f67696f943f09ad3ee4e8fdbbc319">WavFileIO::validateFile</a></div><div class="ttdeci">bool validateFile(std::string inputFilePath)</div><div class="ttdoc">Makes sure the file is valid.</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:24</div></div>
-<div class="ttc" id="aclassWavFileIO_html_a6255bbce90a8b1871fcbd4c6f34329bb"><div class="ttname"><a href="classWavFileIO.html#a6255bbce90a8b1871fcbd4c6f34329bb">WavFileIO::getNumberOfChannels</a></div><div class="ttdeci">int getNumberOfChannels()</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:118</div></div>
-<div class="ttc" id="aclassWavFileIO_html_a78040e9bb41376f19e32a547850fa234"><div class="ttname"><a href="classWavFileIO.html#a78040e9bb41376f19e32a547850fa234">WavFileIO::constructName</a></div><div class="ttdeci">std::string constructName(std::string providedName)</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:105</div></div>
-<div class="ttc" id="aclassWavFileIO_html_a9bed7a9961aa92994ac95cc71204a09b"><div class="ttname"><a href="classWavFileIO.html#a9bed7a9961aa92994ac95cc71204a09b">WavFileIO::getSampleRate</a></div><div class="ttdeci">int getSampleRate()</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:112</div></div>
-<div class="ttc" id="aclassWavFileIO_html_aae979b82d6003e3fdf3a42bc2ab759c3"><div class="ttname"><a href="classWavFileIO.html#aae979b82d6003e3fdf3a42bc2ab759c3">WavFileIO::printHeader</a></div><div class="ttdeci">void printHeader()</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:143</div></div>
-<div class="ttc" id="aclassWavFileIO_html_ad15f9f3450d2ed5aa35c689c2e0a4012"><div class="ttname"><a href="classWavFileIO.html#ad15f9f3450d2ed5aa35c689c2e0a4012">WavFileIO::setSoundDataLeft</a></div><div class="ttdeci">void setSoundDataLeft(std::vector&lt; float &gt; inputData)</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:137</div></div>
-<div class="ttc" id="aclassWavFileIO_html_adecb7bee6f7e9cd09a77ca84ade064a3"><div class="ttname"><a href="classWavFileIO.html#adecb7bee6f7e9cd09a77ca84ade064a3">WavFileIO::ingestFile</a></div><div class="ttdeci">bool ingestFile(std::string inputFilePath)</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:30</div></div>
-<div class="ttc" id="aclassWavFileIO_html_af05cc16fcc4f5f9e9b2fdf4e71895136"><div class="ttname"><a href="classWavFileIO.html#af05cc16fcc4f5f9e9b2fdf4e71895136">WavFileIO::setSoundDataRight</a></div><div class="ttdeci">void setSoundDataRight(std::vector&lt; float &gt; inputData)</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:132</div></div>
+<div class="ttc" id="aclassWavFileIO_html_a6255bbce90a8b1871fcbd4c6f34329bb"><div class="ttname"><a href="classWavFileIO.html#a6255bbce90a8b1871fcbd4c6f34329bb">WavFileIO::getNumberOfChannels</a></div><div class="ttdeci">int getNumberOfChannels()</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:210</div></div>
+<div class="ttc" id="aclassWavFileIO_html_a78040e9bb41376f19e32a547850fa234"><div class="ttname"><a href="classWavFileIO.html#a78040e9bb41376f19e32a547850fa234">WavFileIO::constructName</a></div><div class="ttdeci">std::string constructName(std::string providedName)</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:129</div></div>
+<div class="ttc" id="aclassWavFileIO_html_a9bed7a9961aa92994ac95cc71204a09b"><div class="ttname"><a href="classWavFileIO.html#a9bed7a9961aa92994ac95cc71204a09b">WavFileIO::getSampleRate</a></div><div class="ttdeci">int getSampleRate()</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:204</div></div>
+<div class="ttc" id="aclassWavFileIO_html_aae979b82d6003e3fdf3a42bc2ab759c3"><div class="ttname"><a href="classWavFileIO.html#aae979b82d6003e3fdf3a42bc2ab759c3">WavFileIO::printHeader</a></div><div class="ttdeci">void printHeader()</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:235</div></div>
+<div class="ttc" id="aclassWavFileIO_html_ad15f9f3450d2ed5aa35c689c2e0a4012"><div class="ttname"><a href="classWavFileIO.html#ad15f9f3450d2ed5aa35c689c2e0a4012">WavFileIO::setSoundDataLeft</a></div><div class="ttdeci">void setSoundDataLeft(std::vector&lt; float &gt; inputData)</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:229</div></div>
+<div class="ttc" id="aclassWavFileIO_html_adecb7bee6f7e9cd09a77ca84ade064a3"><div class="ttname"><a href="classWavFileIO.html#adecb7bee6f7e9cd09a77ca84ade064a3">WavFileIO::ingestFile</a></div><div class="ttdeci">bool ingestFile(std::string inputFilePath)</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:40</div></div>
+<div class="ttc" id="aclassWavFileIO_html_ae97db8313fed19e69ff377b5dc622b13"><div class="ttname"><a href="classWavFileIO.html#ae97db8313fed19e69ff377b5dc622b13">WavFileIO::validateName</a></div><div class="ttdeci">bool validateName(std::string providedName)</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:113</div></div>
+<div class="ttc" id="aclassWavFileIO_html_af05cc16fcc4f5f9e9b2fdf4e71895136"><div class="ttname"><a href="classWavFileIO.html#af05cc16fcc4f5f9e9b2fdf4e71895136">WavFileIO::setSoundDataRight</a></div><div class="ttdeci">void setSoundDataRight(std::vector&lt; float &gt; inputData)</div><div class="ttdef"><b>Definition:</b> WavFileIO.cpp:224</div></div>
 <div class="ttc" id="astructWaveHeader_html"><div class="ttname"><a href="structWaveHeader.html">WaveHeader</a></div><div class="ttdef"><b>Definition:</b> waveHeader.h:5</div></div>
 <div class="ttc" id="awaveHeader_8h_html"><div class="ttname"><a href="waveHeader_8h.html">waveHeader.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

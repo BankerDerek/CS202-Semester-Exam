@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['findmaxval_0',['findMaxVal',['../classNormalization.html#a0cc30ed5a1b93d392cdd6f3d32c12bfd',1,'Normalization']]],
-  ['findmultiplier_1',['findMultiplier',['../classNormalization.html#a30b0db6858cdeb55eb1a1508a91f9c50',1,'Normalization']]]
+  ['exportfile_0',['exportFile',['../classWavFileIO.html#a39b8aa097dca529d6ad71d0cde77e5c0',1,'WavFileIO']]]
 ];

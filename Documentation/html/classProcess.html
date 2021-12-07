@@ -98,6 +98,9 @@ $(document).ready(function(){initNavTree('classProcess.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 
+<p>Processor for wave file data.  
+ <a href="classProcess.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="AudioProcessor_8h_source.html">AudioProcessor.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Process:</div>
@@ -106,10 +109,10 @@ Inheritance diagram for Process:</div>
   <img src="classProcess.png" usemap="#Process_map" alt=""/>
   <map id="Process_map" name="Process_map">
 <area href="classEcho.html" alt="Echo" shape="rect" coords="0,0,99,24"/>
-<area href="classGainAdjustment.html" alt="GainAdjustment" shape="rect" coords="109,0,208,24"/>
-<area href="classNormalization.html" alt="Normalization" shape="rect" coords="218,0,317,24"/>
+<area href="classGainAdjustment.html" title="Class to adjust data values by a constant." alt="GainAdjustment" shape="rect" coords="109,0,208,24"/>
+<area href="classNormalization.html" title="The Normalization class normalizes a sound file." alt="Normalization" shape="rect" coords="218,0,317,24"/>
 <area href="classCompression.html" title="The compression class compresses a sound file." alt="Compression" shape="rect" coords="327,0,426,24"/>
-<area href="classLowPassFilter.html" alt="LowPassFilter" shape="rect" coords="436,0,535,24"/>
+<area href="classLowPassFilter.html" title="Class that contains a low pass filter." alt="LowPassFilter" shape="rect" coords="436,0,535,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -120,18 +123,18 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a0f5cd166fb6d9cd09fe9c45f91454ee8 inherit pub_methods_classEcho"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classGainAdjustment"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classGainAdjustment')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classGainAdjustment.html">GainAdjustment</a></td></tr>
 <tr class="memitem:affafd578520c1dc0793e0fcf0c00252a inherit pub_methods_classGainAdjustment"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGainAdjustment.html#affafd578520c1dc0793e0fcf0c00252a">adjustVector</a> (std::vector&lt; float &gt; waveOriginal)</td></tr>
+<tr class="memdesc:affafd578520c1dc0793e0fcf0c00252a inherit pub_methods_classGainAdjustment"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjusts each value in a data section Takes a value from the vector and multiplies it by the variable holding the constant value the data set is being adjusted by.  <a href="classGainAdjustment.html#affafd578520c1dc0793e0fcf0c00252a">More...</a><br /></td></tr>
 <tr class="separator:affafd578520c1dc0793e0fcf0c00252a inherit pub_methods_classGainAdjustment"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7c89b25e61bd643680b01ab4ece3574 inherit pub_methods_classGainAdjustment"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGainAdjustment.html#aa7c89b25e61bd643680b01ab4ece3574">adjustment</a> (float value)</td></tr>
+<tr class="memdesc:aa7c89b25e61bd643680b01ab4ece3574 inherit pub_methods_classGainAdjustment"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplication function Function the adjustVector function uses to change each value.  <a href="classGainAdjustment.html#aa7c89b25e61bd643680b01ab4ece3574">More...</a><br /></td></tr>
 <tr class="separator:aa7c89b25e61bd643680b01ab4ece3574 inherit pub_methods_classGainAdjustment"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a5b915c3a6a8c7390561c0d69df402d inherit pub_methods_classGainAdjustment"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGainAdjustment.html#a5a5b915c3a6a8c7390561c0d69df402d">setAdjustNumber</a> (float adjust)</td></tr>
+<tr class="memdesc:a5a5b915c3a6a8c7390561c0d69df402d inherit pub_methods_classGainAdjustment"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new adjustment value Takes in a value and replaces the value held by the "adjustNumber" variable.  <a href="classGainAdjustment.html#a5a5b915c3a6a8c7390561c0d69df402d">More...</a><br /></td></tr>
 <tr class="separator:a5a5b915c3a6a8c7390561c0d69df402d inherit pub_methods_classGainAdjustment"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classNormalization"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNormalization')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classNormalization.html">Normalization</a></td></tr>
-<tr class="memitem:a0cc30ed5a1b93d392cdd6f3d32c12bfd inherit pub_methods_classNormalization"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalization.html#a0cc30ed5a1b93d392cdd6f3d32c12bfd">findMaxVal</a> (std::vector&lt; float &gt; data)</td></tr>
-<tr class="separator:a0cc30ed5a1b93d392cdd6f3d32c12bfd inherit pub_methods_classNormalization"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30b0db6858cdeb55eb1a1508a91f9c50 inherit pub_methods_classNormalization"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalization.html#a30b0db6858cdeb55eb1a1508a91f9c50">findMultiplier</a> ()</td></tr>
-<tr class="separator:a30b0db6858cdeb55eb1a1508a91f9c50 inherit pub_methods_classNormalization"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c8eda074ff81dd64c80aa466b48ff80 inherit pub_methods_classNormalization"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalization.html#a9c8eda074ff81dd64c80aa466b48ff80">normalizeData</a> (std::vector&lt; float &gt; data)</td></tr>
-<tr class="separator:a9c8eda074ff81dd64c80aa466b48ff80 inherit pub_methods_classNormalization"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5fbe812855a4a1a8ed17369c1f8563e inherit pub_methods_classNormalization"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalization.html#af5fbe812855a4a1a8ed17369c1f8563e">normalize</a> (std::vector&lt; float &gt; inputData)</td></tr>
+<tr class="memdesc:af5fbe812855a4a1a8ed17369c1f8563e inherit pub_methods_classNormalization"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize the vector.  <a href="classNormalization.html#af5fbe812855a4a1a8ed17369c1f8563e">More...</a><br /></td></tr>
+<tr class="separator:af5fbe812855a4a1a8ed17369c1f8563e inherit pub_methods_classNormalization"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCompression"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCompression')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCompression.html">Compression</a></td></tr>
 <tr class="memitem:ad9824fb235a64f6d8edb72a0bf9cbcd4 inherit pub_methods_classCompression"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCompression.html#ad9824fb235a64f6d8edb72a0bf9cbcd4">compressData</a> (std::vector&lt; float &gt; waveOriginal)</td></tr>
 <tr class="memdesc:ad9824fb235a64f6d8edb72a0bf9cbcd4 inherit pub_methods_classCompression"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compress the vector Returns a smaller vector the original vector was compressed into.  <a href="classCompression.html#ad9824fb235a64f6d8edb72a0bf9cbcd4">More...</a><br /></td></tr>
@@ -141,19 +144,31 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:acb068979683307eb91351dc2db04b5fd inherit pub_methods_classCompression"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classLowPassFilter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classLowPassFilter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classLowPassFilter.html">LowPassFilter</a></td></tr>
 <tr class="memitem:ab5be9755962e4699f099a3ee09bb4655 inherit pub_methods_classLowPassFilter"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#ab5be9755962e4699f099a3ee09bb4655">lowPassVector</a> (std::vector&lt; float &gt; waveOriginal)</td></tr>
+<tr class="memdesc:ab5be9755962e4699f099a3ee09bb4655 inherit pub_methods_classLowPassFilter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs a wave through a low pass filter Takes a vector and modifies it based on a low pass filter diagram.  <a href="classLowPassFilter.html#ab5be9755962e4699f099a3ee09bb4655">More...</a><br /></td></tr>
 <tr class="separator:ab5be9755962e4699f099a3ee09bb4655 inherit pub_methods_classLowPassFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a246a4cbcc0a2dd494569d249066686dd inherit pub_methods_classLowPassFilter"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#a246a4cbcc0a2dd494569d249066686dd">delaySignal</a> (std::vector&lt; float &gt; waveOriginal)</td></tr>
+<tr class="memdesc:a246a4cbcc0a2dd494569d249066686dd inherit pub_methods_classLowPassFilter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the delayed sample Function that takes in the original wave vector and delays it by a predetermined amount.  <a href="classLowPassFilter.html#a246a4cbcc0a2dd494569d249066686dd">More...</a><br /></td></tr>
 <tr class="separator:a246a4cbcc0a2dd494569d249066686dd inherit pub_methods_classLowPassFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c9e37d0f4dd097cc093db4ec78bf04e inherit pub_methods_classLowPassFilter"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#a0c9e37d0f4dd097cc093db4ec78bf04e">multiply</a> (float currentWave, float currentSample)</td></tr>
+<tr class="memdesc:a0c9e37d0f4dd097cc093db4ec78bf04e inherit pub_methods_classLowPassFilter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplication in low pass filter Multiplies the delayed sample of the vector by the original vector.  <a href="classLowPassFilter.html#a0c9e37d0f4dd097cc093db4ec78bf04e">More...</a><br /></td></tr>
 <tr class="separator:a0c9e37d0f4dd097cc093db4ec78bf04e inherit pub_methods_classLowPassFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36d6c544b6a350d722611e5508949b0 inherit pub_methods_classLowPassFilter"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#ab36d6c544b6a350d722611e5508949b0">multGain</a> (float currentWave)</td></tr>
+<tr class="memdesc:ab36d6c544b6a350d722611e5508949b0 inherit pub_methods_classLowPassFilter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplication of filter gain Multiplies the vector in the state it is in within the low pass filter by the predetermined gain.  <a href="classLowPassFilter.html#ab36d6c544b6a350d722611e5508949b0">More...</a><br /></td></tr>
+<tr class="separator:ab36d6c544b6a350d722611e5508949b0 inherit pub_methods_classLowPassFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5f281c59bee93cff3e54f8470adec09 inherit pub_methods_classLowPassFilter"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#ad5f281c59bee93cff3e54f8470adec09">add</a> (float originalWave, float currentWave)</td></tr>
+<tr class="memdesc:ad5f281c59bee93cff3e54f8470adec09 inherit pub_methods_classLowPassFilter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addition of heavily modified values to the original values Multiplies the value from the vector that went through the delay sample and the gain with a value from the original vector.  <a href="classLowPassFilter.html#ad5f281c59bee93cff3e54f8470adec09">More...</a><br /></td></tr>
 <tr class="separator:ad5f281c59bee93cff3e54f8470adec09 inherit pub_methods_classLowPassFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27f4a6ebf042572345b851c50816398e inherit pub_methods_classLowPassFilter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#a27f4a6ebf042572345b851c50816398e">setGain</a> (float newGain)</td></tr>
+<tr class="memdesc:a27f4a6ebf042572345b851c50816398e inherit pub_methods_classLowPassFilter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new gain value Takes in a value and replaces the value held by the "gain" variable.  <a href="classLowPassFilter.html#a27f4a6ebf042572345b851c50816398e">More...</a><br /></td></tr>
 <tr class="separator:a27f4a6ebf042572345b851c50816398e inherit pub_methods_classLowPassFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae16a2a9dd819d914e1cd7146383347b5 inherit pub_methods_classLowPassFilter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#ae16a2a9dd819d914e1cd7146383347b5">setDelay</a> (float newDelay)</td></tr>
+<tr class="memdesc:ae16a2a9dd819d914e1cd7146383347b5 inherit pub_methods_classLowPassFilter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new delay value Takes in a value and replaces the value held by the "delay" variable.  <a href="classLowPassFilter.html#ae16a2a9dd819d914e1cd7146383347b5">More...</a><br /></td></tr>
 <tr class="separator:ae16a2a9dd819d914e1cd7146383347b5 inherit pub_methods_classLowPassFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Processor for wave file data. </p>
+<p ><a class="el" href="classProcess.html" title="Processor for wave file data.">Process</a> class acts as the processor for all the data. The class inherets all the properties of the classes that declare and define the functions for filtering or modifying the given data. To use, create an object assigned to the "Process" class and then you are free to use any function in any of the data modifying classes. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

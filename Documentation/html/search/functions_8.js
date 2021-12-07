@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalizedata_0',['normalizeData',['../classNormalization.html#a9c8eda074ff81dd64c80aa466b48ff80',1,'Normalization']]]
+  ['normalize_0',['normalize',['../classNormalization.html#af5fbe812855a4a1a8ed17369c1f8563e',1,'Normalization']]]
 ];

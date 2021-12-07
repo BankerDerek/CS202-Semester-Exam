@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('classLowPassFilter.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
+<p>Class that contains a low pass filter.  
+ <a href="classLowPassFilter.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="LowPassFilter_8h_source.html">LowPassFilter.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for LowPassFilter:</div>
@@ -106,26 +109,38 @@ Inheritance diagram for LowPassFilter:</div>
  <div class="center">
   <img src="classLowPassFilter.png" usemap="#LowPassFilter_map" alt=""/>
   <map id="LowPassFilter_map" name="LowPassFilter_map">
-<area href="classProcess.html" alt="Process" shape="rect" coords="0,56,91,80"/>
+<area href="classProcess.html" title="Processor for wave file data." alt="Process" shape="rect" coords="0,56,91,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5be9755962e4699f099a3ee09bb4655"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#ab5be9755962e4699f099a3ee09bb4655">lowPassVector</a> (std::vector&lt; float &gt; waveOriginal)</td></tr>
+<tr class="memdesc:ab5be9755962e4699f099a3ee09bb4655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs a wave through a low pass filter Takes a vector and modifies it based on a low pass filter diagram.  <a href="classLowPassFilter.html#ab5be9755962e4699f099a3ee09bb4655">More...</a><br /></td></tr>
 <tr class="separator:ab5be9755962e4699f099a3ee09bb4655"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a246a4cbcc0a2dd494569d249066686dd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#a246a4cbcc0a2dd494569d249066686dd">delaySignal</a> (std::vector&lt; float &gt; waveOriginal)</td></tr>
+<tr class="memdesc:a246a4cbcc0a2dd494569d249066686dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the delayed sample Function that takes in the original wave vector and delays it by a predetermined amount.  <a href="classLowPassFilter.html#a246a4cbcc0a2dd494569d249066686dd">More...</a><br /></td></tr>
 <tr class="separator:a246a4cbcc0a2dd494569d249066686dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c9e37d0f4dd097cc093db4ec78bf04e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#a0c9e37d0f4dd097cc093db4ec78bf04e">multiply</a> (float currentWave, float currentSample)</td></tr>
+<tr class="memdesc:a0c9e37d0f4dd097cc093db4ec78bf04e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplication in low pass filter Multiplies the delayed sample of the vector by the original vector.  <a href="classLowPassFilter.html#a0c9e37d0f4dd097cc093db4ec78bf04e">More...</a><br /></td></tr>
 <tr class="separator:a0c9e37d0f4dd097cc093db4ec78bf04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36d6c544b6a350d722611e5508949b0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#ab36d6c544b6a350d722611e5508949b0">multGain</a> (float currentWave)</td></tr>
+<tr class="memdesc:ab36d6c544b6a350d722611e5508949b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplication of filter gain Multiplies the vector in the state it is in within the low pass filter by the predetermined gain.  <a href="classLowPassFilter.html#ab36d6c544b6a350d722611e5508949b0">More...</a><br /></td></tr>
+<tr class="separator:ab36d6c544b6a350d722611e5508949b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5f281c59bee93cff3e54f8470adec09"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#ad5f281c59bee93cff3e54f8470adec09">add</a> (float originalWave, float currentWave)</td></tr>
+<tr class="memdesc:ad5f281c59bee93cff3e54f8470adec09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addition of heavily modified values to the original values Multiplies the value from the vector that went through the delay sample and the gain with a value from the original vector.  <a href="classLowPassFilter.html#ad5f281c59bee93cff3e54f8470adec09">More...</a><br /></td></tr>
 <tr class="separator:ad5f281c59bee93cff3e54f8470adec09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27f4a6ebf042572345b851c50816398e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#a27f4a6ebf042572345b851c50816398e">setGain</a> (float newGain)</td></tr>
+<tr class="memdesc:a27f4a6ebf042572345b851c50816398e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new gain value Takes in a value and replaces the value held by the "gain" variable.  <a href="classLowPassFilter.html#a27f4a6ebf042572345b851c50816398e">More...</a><br /></td></tr>
 <tr class="separator:a27f4a6ebf042572345b851c50816398e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae16a2a9dd819d914e1cd7146383347b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLowPassFilter.html#ae16a2a9dd819d914e1cd7146383347b5">setDelay</a> (float newDelay)</td></tr>
+<tr class="memdesc:ae16a2a9dd819d914e1cd7146383347b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new delay value Takes in a value and replaces the value held by the "delay" variable.  <a href="classLowPassFilter.html#ae16a2a9dd819d914e1cd7146383347b5">More...</a><br /></td></tr>
 <tr class="separator:ae16a2a9dd819d914e1cd7146383347b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class that contains a low pass filter. </p>
+<p >The class contains a function that conducts running a vector of data through a low pass filter. It does this by multiplying the original vector by a slightly delayed version of that vector. It then runs the resulting vector through a gain and then recombines the modified vector with the original vector. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad5f281c59bee93cff3e54f8470adec09" name="ad5f281c59bee93cff3e54f8470adec09"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad5f281c59bee93cff3e54f8470adec09">&#9670;&nbsp;</a></span>add()</h2>
 
@@ -152,6 +167,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Addition of heavily modified values to the original values Multiplies the value from the vector that went through the delay sample and the gain with a value from the original vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">originalWave</td><td>is a value from the unedited vector </td></tr>
+    <tr><td class="paramname">currentWave</td><td>is the value from the modified vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a246a4cbcc0a2dd494569d249066686dd" name="a246a4cbcc0a2dd494569d249066686dd"></a>
@@ -170,6 +194,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates the delayed sample Function that takes in the original wave vector and delays it by a predetermined amount. </p>
+<p >The wave is then returned to be used in the low pass filter. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waveOriginal</td><td>is the original wave that is to be turned into a delayed sample </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector that holds the delayed sample </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>the delay can be modified for different results using the getter for the "delay" variable </dd></dl>
+
 </div>
 </div>
 <a id="ab5be9755962e4699f099a3ee09bb4655" name="ab5be9755962e4699f099a3ee09bb4655"></a>
@@ -187,6 +221,43 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Runs a wave through a low pass filter Takes a vector and modifies it based on a low pass filter diagram. </p>
+<p >This involves multiplying the wave by the delayed version of itself and adding it back to the original wave. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waveOriginal</td><td>is the inputed wave in the form of a vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector of the wave that has passed throught the entire low pass filter </dd></dl>
+
+</div>
+</div>
+<a id="ab36d6c544b6a350d722611e5508949b0" name="ab36d6c544b6a350d722611e5508949b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab36d6c544b6a350d722611e5508949b0">&#9670;&nbsp;</a></span>multGain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float LowPassFilter::multGain </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>currentWave</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiplication of filter gain Multiplies the vector in the state it is in within the low pass filter by the predetermined gain. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentWave</td><td>is the iterated place value in the vector currently in one of the branches of the low pass filter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a float value of the multiplied value with the gain variable </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>the "gain" variable can be changed around by a setter for different results </dd></dl>
 
 </div>
 </div>
@@ -216,6 +287,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Multiplication in low pass filter Multiplies the delayed sample of the vector by the original vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentWave</td><td>is a value from the original form of the vector </td></tr>
+    <tr><td class="paramname">currentSample</td><td>is the value from the version of the vector that has been delayed by a certain amount </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the next value for the next version of the vector that is ready to by multiplied by the gain </dd></dl>
+
 </div>
 </div>
 <a id="ae16a2a9dd819d914e1cd7146383347b5" name="ae16a2a9dd819d914e1cd7146383347b5"></a>
@@ -234,6 +315,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets a new delay value Takes in a value and replaces the value held by the "delay" variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newDelay</td><td>holds the new value for delay to be assigned </td></tr>
+    <tr><td class="paramname">returns</td><td>void </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a27f4a6ebf042572345b851c50816398e" name="a27f4a6ebf042572345b851c50816398e"></a>
@@ -251,6 +341,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets a new gain value Takes in a value and replaces the value held by the "gain" variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newGain</td><td>holds the new value for gain to be assigned </td></tr>
+    <tr><td class="paramname">returns</td><td>void </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

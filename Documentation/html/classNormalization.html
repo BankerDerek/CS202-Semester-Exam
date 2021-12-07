@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('classNormalization.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="classNormalization.html" title="The Normalization class normalizes a sound file.">Normalization</a> class normalizes a sound file.  
+ <a href="classNormalization.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Normalization_8h_source.html">Normalization.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Normalization:</div>
@@ -106,70 +109,44 @@ Inheritance diagram for Normalization:</div>
  <div class="center">
   <img src="classNormalization.png" usemap="#Normalization_map" alt=""/>
   <map id="Normalization_map" name="Normalization_map">
-<area href="classProcess.html" alt="Process" shape="rect" coords="0,56,88,80"/>
+<area href="classProcess.html" title="Processor for wave file data." alt="Process" shape="rect" coords="0,56,88,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0cc30ed5a1b93d392cdd6f3d32c12bfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalization.html#a0cc30ed5a1b93d392cdd6f3d32c12bfd">findMaxVal</a> (std::vector&lt; float &gt; data)</td></tr>
-<tr class="separator:a0cc30ed5a1b93d392cdd6f3d32c12bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30b0db6858cdeb55eb1a1508a91f9c50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalization.html#a30b0db6858cdeb55eb1a1508a91f9c50">findMultiplier</a> ()</td></tr>
-<tr class="separator:a30b0db6858cdeb55eb1a1508a91f9c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c8eda074ff81dd64c80aa466b48ff80"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalization.html#a9c8eda074ff81dd64c80aa466b48ff80">normalizeData</a> (std::vector&lt; float &gt; data)</td></tr>
-<tr class="separator:a9c8eda074ff81dd64c80aa466b48ff80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5fbe812855a4a1a8ed17369c1f8563e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNormalization.html#af5fbe812855a4a1a8ed17369c1f8563e">normalize</a> (std::vector&lt; float &gt; inputData)</td></tr>
+<tr class="memdesc:af5fbe812855a4a1a8ed17369c1f8563e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize the vector.  <a href="classNormalization.html#af5fbe812855a4a1a8ed17369c1f8563e">More...</a><br /></td></tr>
+<tr class="separator:af5fbe812855a4a1a8ed17369c1f8563e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0cc30ed5a1b93d392cdd6f3d32c12bfd" name="a0cc30ed5a1b93d392cdd6f3d32c12bfd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cc30ed5a1b93d392cdd6f3d32c12bfd">&#9670;&nbsp;</a></span>findMaxVal()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >The <a class="el" href="classNormalization.html" title="The Normalization class normalizes a sound file.">Normalization</a> class normalizes a sound file. </p>
+<p >The class takes a vector with the data from a sound file and normalizes it. It does this by finding the largest value in the data which is used to find a constant value. Then every single value in the data is multiplied by that constant value. This will essentially normalize the audio file by maximizing the amplitude of the final waveform. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af5fbe812855a4a1a8ed17369c1f8563e" name="af5fbe812855a4a1a8ed17369c1f8563e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5fbe812855a4a1a8ed17369c1f8563e">&#9670;&nbsp;</a></span>normalize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Normalization::findMaxVal </td>
+          <td class="memname">std::vector&lt; float &gt; Normalization::normalize </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; float &gt;&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramname"><em>inputData</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a30b0db6858cdeb55eb1a1508a91f9c50" name="a30b0db6858cdeb55eb1a1508a91f9c50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30b0db6858cdeb55eb1a1508a91f9c50">&#9670;&nbsp;</a></span>findMultiplier()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Normalization::findMultiplier </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9c8eda074ff81dd64c80aa466b48ff80" name="a9c8eda074ff81dd64c80aa466b48ff80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c8eda074ff81dd64c80aa466b48ff80">&#9670;&nbsp;</a></span>normalizeData()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; float &gt; Normalization::normalizeData </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; float &gt;&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Normalize the vector. </p>
+<p >Returns a normalized vector by taking in </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputData</td><td>vector of floats which represents the original sound data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector normalized version of the original </dd></dl>
 
 </div>
 </div>
