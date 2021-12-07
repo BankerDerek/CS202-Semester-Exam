@@ -24,6 +24,8 @@ class WavFileIO
 
         std::string constructName(std::string providedName);
 
+        bool WavFileIO::exportFile(std::string intendedFileName);
+
         // Gets the sample rate
         int getSampleRate();
 

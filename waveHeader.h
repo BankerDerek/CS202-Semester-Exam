@@ -6,7 +6,7 @@ struct WaveHeader
     // RIFF Header
     char riff_header[4];        // "RIFF"
     int wav_size;               // RIFF Chunk size 
-    char wave_header[4];        // Wave Header 
+    char wave_header[4];        // "WAVE"
 
     // Header information
     char fmt_header[4];         // "FMT"
@@ -19,8 +19,8 @@ struct WaveHeader
     short bit_depth;            // Number of bits per sample 
 
     // Data
-    char data_header[4];        // 
-    int data_bytes;             // 
+    char data_header[4];        // "data"
+    int data_bytes;             //  Total number of bytes in the data section 
 
 };
 #endif 

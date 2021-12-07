@@ -47,6 +47,8 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
 
         if (waveHeader.riff_header != "RIFF")
         {
+            delete buffer;
+            file.close(); 
             return false;
         } 
 
@@ -107,6 +109,46 @@ std::string WavFileIO::constructName(std::string providedName)
     return filePath.substr(0,filePath.find_last_of("\\") + 1) + providedName + ".wav";
 }
 
+
+ bool WavFileIO::exportFile(std::string intendedFileName)
+ {
+    std::ofstream result("student.dat", std::ios::out | std::ios::binary);
+    
+    if (result.is_open())
+    {
+        waveHeader.sample_alignment = soundDataRight.size();
+        waveHeader.data_bytes = waveHeader.sample_alignment * waveHeader.bit_depth;
+        result.write((char*)&waveHeader, sizeof(waveHeader));
+
+        short* buffer;
+
+        if (waveHeader.num_channels == 1)
+        {
+            for (int i = 0; i < soundDataRight.size(); i++)
+            {
+                buffer[i] = soundDataRight[i];
+            }
+            result.write((char*)&buffer, sizeof(buffer));
+        }
+        if (waveHeader.num_channels == 2)
+        {
+            for (int i = 0; i < soundDataRight.size(); i++)
+            {
+                buffer[i] = soundDataRight[i];
+            }
+            result.write((char*)&buffer, sizeof(buffer));
+            buffer = new short[waveHeader.data_bytes];
+            for (int i = 0; i < soundDataLeft.size(); i++)
+            {
+                buffer[i] = soundDataLeft[i];
+            }
+        }
+        delete buffer;
+        result.close();
+        return true;
+    }
+    return false;
+ }
 
 // Get's the sample rate
 int WavFileIO::getSampleRate()
