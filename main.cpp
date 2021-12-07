@@ -30,7 +30,7 @@ int main()
     cout << endl << "Initializing Audio Editor..." << endl;
     
     // Asks the user to open the menu or quit
-    char* userInput;
+    string userInput;
     cout << "Type 'e' to exit the program. Type 'm' to go to the menu" << endl;
     while (true)
     {
@@ -62,7 +62,7 @@ int main()
             cout << "\tFile loaded successfully." << endl << endl;
             break;
         }
-        cout << endl << "\tFile failed to load. Please try a different file." << endl;
+        cout << "\tFile failed to load. Please try a different file." << endl;
     }
     
     // Module selection
@@ -71,7 +71,7 @@ int main()
     cout << "\t2 : Echo" << endl;
     cout << "\t3 : GainAdjustment" << endl;
     cout << "\t4 : LowPassFilter" << endl;
-    // cout << "\t5 : Compression" << endl;
+    cout << "\t5 : Compression" << endl;
 
     while (true)
     {
@@ -99,7 +99,7 @@ int main()
         break;
 
     case '2': // Echo
-        cout << "Selected: Echo" << endl;
+        cout << endl << "\tSelected: Echo" << endl;
         float gain;
         int delay;
 
@@ -108,9 +108,9 @@ int main()
         {
             cout << "Gain: ";
             cin >> userInput;
-            if (atof(userInput) < 1)
+            if (stof(userInput) < 1)
             {
-                gain = atof(userInput);
+                gain = stof(userInput);
                 break;
             }
         }
@@ -119,9 +119,9 @@ int main()
         {
             cout << "delay: ";
             cin >> userInput;
-            if (atoi(userInput) > 0)
+            if (stoi(userInput) > 0)
             {
-                delay = atoi(userInput);
+                delay = stoi(userInput);
                 break;
             }
         }
@@ -141,7 +141,7 @@ int main()
         break;
 
     case '3': // GainAdjustment
-        cout << "Selected: GainAdjustment" << endl;
+        cout << endl << "\tSelected: GainAdjustment" << endl;
         if (audioFile.getNumberOfChannels() == 1)
         {
             audioFile.setSoundDataRight(gain_adjustment.adjustVector(audioFile.getSoundDataRight()));
@@ -154,7 +154,7 @@ int main()
         break;
 
     case '4': // LowPassFilter
-        cout << "Selected: LowPassFilter" << endl;
+        cout << endl << "\tSelected: LowPassFilter" << endl;
         if (audioFile.getNumberOfChannels() == 1)
         {
             audioFile.setSoundDataRight(low_pass_filter.lowPassVector(audioFile.getSoundDataRight()));
@@ -167,7 +167,7 @@ int main()
         break;
 
     case '5': // Compression
-         cout << "Selected: Compression" << endl;
+         cout << endl << "\tSelected: Compression" << endl;
          if (audioFile.getNumberOfChannels() == 1)
          {
              audioFile.setSoundDataRight(compression.compressData(audioFile.getSoundDataRight()));
@@ -196,8 +196,14 @@ int main()
             break;
         }
     }
-    audioFile.exportFile(userInput);
-    cout << "\tExport Complete..." << endl;
+    if (audioFile.exportFile(userInput))
+    {
+        cout << "\tExport: SUCCESSFUL" << endl << "Exiting program...";
+    }
+    else
+    {
+        cout << "\tExport: FAILED" << endl << "Exiting program...";
+    }
 
     return 1;
 }

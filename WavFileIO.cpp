@@ -24,33 +24,37 @@ std::vector<float> soundDataLeft;      //< Left channel audio data in stereo
 bool WavFileIO::validateFile(std::string inputFilePath)
 {
     std::ifstream infile(inputFilePath);
-    return (infile.good() && inputFilePath.substr(inputFilePath.find_last_of(".") + 1) == "wav");
+    if (!infile.good())
+    {
+        std::cout << "\tERROR: File does not exist or cannot open." << std::endl;
+        return false; 
+    }
+    if (inputFilePath.substr(inputFilePath.find_last_of(".") + 1).compare("wav") != 0)
+    {
+        std::cout << "\tERROR: File does not have \".wav\" extension." << std::endl;
+        return false; 
+    }
+    return true;
 }
 
 bool WavFileIO::ingestFile (std::string inputFilePath)
 {
-    filePath = inputFilePath; 
-    
     // Checks if the file exists and has a ".wav" extension
     if (!WavFileIO::validateFile(inputFilePath))
     {
         return false; 
-    }    
+    }
+
+    filePath = inputFilePath;     
 
     // Opens the file
     std::ifstream file(inputFilePath, std::ios::binary | std::ios::in);
 
     short* buffer;
+
     if (file.is_open())
     {
         file.read((char*)&waveHeader, sizeof(waveHeader));
-
-        if (waveHeader.riff_header != "RIFF")
-        {
-            delete buffer;
-            file.close(); 
-            return false;
-        } 
 
         buffer = new short[waveHeader.data_bytes];
         file.read((char*)buffer, waveHeader.data_bytes);
@@ -100,7 +104,9 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
         
         delete buffer;
         file.close();   
+        return true;
     }
+    std::cout << "\tERROR: could not open file." << std::endl;
     return false;
 }
 
@@ -132,32 +138,60 @@ std::string WavFileIO::constructName(std::string providedName)
     
     if (result.is_open())
     {
+        if (waveHeader.num_channels == 1)
+        {
+            std::cout << std::endl << "\t" << soundDataRight.size() << " samples" << std::endl;
+        }
+        else
+        {
+            std::cout << std::endl << "\t" << soundDataRight.size()* 2 << " samples" << std::endl;
+        }
+
+        std::cout << "\tProgress:" << std::endl;
         waveHeader.sample_alignment = soundDataRight.size();
         waveHeader.data_bytes = waveHeader.sample_alignment * waveHeader.bit_depth;
         result.write((char*)&waveHeader, sizeof(waveHeader));
-
+        std::cout << "\t\tWritten header..." << std::endl;
+        
         short* buffer;
 
         if (waveHeader.num_channels == 1)
         {
             for (int i = 0; i < soundDataRight.size(); i++)
             {
+                if ((i % (soundDataRight.size() / 20)) == 0)
+                {
+                    std::cout << "\t\tData writing: " << (i/soundDataRight.size()) << "%" << std::endl;
+                }
                 buffer[i] = soundDataRight[i];
             }
             result.write((char*)&buffer, sizeof(buffer));
+            std::cout << "\t\tWriting: Done" << std::endl;
         }
         if (waveHeader.num_channels == 2)
         {
             for (int i = 0; i < soundDataRight.size(); i++)
             {
+                if ((i % (soundDataRight.size() / 20)) == 0)
+                {
+                    std::cout << "\t\tRight Channel Data writing: " << (i/soundDataRight.size()) << "%" << std::endl;
+                }
                 buffer[i] = soundDataRight[i];
             }
             result.write((char*)&buffer, sizeof(buffer));
+            std::cout << "\t\tWriting Right Channel: Done" << std::endl;
+
             buffer = new short[waveHeader.data_bytes];
             for (int i = 0; i < soundDataLeft.size(); i++)
             {
+                if ((i % (soundDataRight.size() / 20)) == 0)
+                {
+                    std::cout << "\t\tLeft Channel Data writing: " << (i/soundDataRight.size()) << "%" << std::endl;
+                }
                 buffer[i] = soundDataLeft[i];
             }
+            result.write((char*)&buffer, sizeof(buffer));
+            std::cout << "\t\tWriting Left Channel: Done" << std::endl;
         }
         delete buffer;
         result.close();
@@ -217,3 +251,6 @@ void WavFileIO::printHeader()
     std::cout << "data_bytes: " << waveHeader.data_bytes << std::endl;
 }
 #endif
+
+
+// C:\TEMP\yes-16-bit-mono.wav
