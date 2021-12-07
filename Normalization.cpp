@@ -1,30 +1,23 @@
-//by Sultan
-//normalization.cpp
+//Sultonbek Kholmatov
+//Normalization.cpp file
 
 #include "Normalization.h"
 
-//Finds the largest value in the data
-void Normalization::findMaxVal(std::vector<float> data){
-    largestValue = 0;
-    for(unsigned int i = 0; i < data.size(); i++){
-        if(largestValue < data[i]){
-            largestValue = data[i];
-        }
-    }
-    //return largestValue;
-}
-//Find the multiplier using the largest value
-void Normalization::findMultiplier(){
-    multiplier = 1 / largestValue;
-    //return multiplier;
-}
-//Multiplies all the values in the data by the multiplier value to Normalize the data
-std::vector<float> Normalization::normalizeData(std::vector<float> data){
-    findMaxVal(data);
-    findMultiplier();
-    for(unsigned int i = 0; i < data.size(); i++){
-        modifiedData[i] = data[i] * multiplier;
-    }
-    return modifiedData;
-}
+std::vector<float> Normalization::normalize(std::vector<float> inputData){
+	float largestValue = 0;
+	float multiplier;
+	std::vector<float> normalizedData;
 
+	for(int i = 0; i < inputData.size(); i++){
+		if(largestValue < inputData[i]){
+			largestValue = inputData[i];
+		}
+	}
+
+	multiplier = 1 / largestValue;
+
+	for(int i = 0; i < inputData.size(); i++){
+		normalizedData.push_back(inputData[i] * multiplier);
+	}
+	return normalizedData;
+}

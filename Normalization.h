@@ -1,20 +1,23 @@
-//by Sultan
-//normalization.h
+//Sultonbek Kholmatov
+//Normalization.h file
 
 #ifndef NORMALIZATION_H
 #define NORMALIZATION_H
 
-#include <iostream>
 #include <vector>
 
-class Normalization{
-    float largestValue = 0;
-    float multiplier;
-    std::vector<float> modifiedData;
-public:
-    void findMaxVal(std::vector<float> data);
-    void findMultiplier();
-    std::vector<float> normalizeData(std::vector<float> data);
+///The Normalization class normalizes a sound file
+///
+///The class takes a vector with the data from a sound file and normalizes it.
+///It does this by finding the largest value in the data which is used to find a constant value. Then every single value in the data is multiplied by that constant value.
+///This will essentially normalize the audio file by maximizing the amplitude of the final waveform.
+struct Normalization{
+	///Normalize the vector
+	///
+	///Returns a normalized vector by taking in
+	///@param inputData vector of floats which represents the original sound data
+	///@returns a vector normalized version of the original
+	std::vector<float> normalize(std::vector<float> inputData);
 };
 
 #endif //NORMALIZATION_H

@@ -89,12 +89,12 @@ int main()
         cout << "Selected: Normalization" << endl;
         if (audioFile.getNumberOfChannels() == 1)
         {
-            audioFile.setSoundDataRight(normalization.normalizeData(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataRight(normalization.normalize(audioFile.getSoundDataRight()));
         }
         else
         {
-            audioFile.setSoundDataRight(normalization.normalizeData(audioFile.getSoundDataRight()));
-            audioFile.setSoundDataLeft(normalization.normalizeData(audioFile.getSoundDataLeft()));
+            audioFile.setSoundDataRight(normalization.normalize(audioFile.getSoundDataRight()));
+            audioFile.setSoundDataLeft(normalization.normalize(audioFile.getSoundDataLeft()));
         }
         break;
 
