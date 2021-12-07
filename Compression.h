@@ -8,9 +8,9 @@
 
 ///The compression class compresses a sound file
 ///
-///The class takes a vector with the data from a sound file and compresses it. 
-///It does this by only adding certain, evenly spaced data points and putting them into a new vector.
-///By essentially removing a lot of data points, the sound file becomes smaller and so, compressed.
+/**The class takes a vector with the data from a sound file and compresses it. 
+It does this by taking certain, evenly spaced data points and putting them into a new vector.
+By essentially removing a lot of data points, the sound file becomes smaller and so, compressed. */
 class Compression{
 private:
     int compFactor = 2;
