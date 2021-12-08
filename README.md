@@ -22,7 +22,10 @@
 
 <b><u>Sultonbek Kholmatov</u></b>
     <p> 
-
+    Wrote .h and .cpp files for Normalization.<br>
+    Wrote .h and .cpp files for Compression with the assist of Connor Riche.<br>
+    Assisted Connor Riche with vector handling for LowPassFilter and GainAdjustment classes.<br>
+    Created the UML diagram.<br>
     </p>
 
 <b><u>UML Diagram</u></b>
