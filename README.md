@@ -8,7 +8,14 @@
 
 <b><u>Derek Banker</u></b>
     <p>
-
+    Wrote and documented WavFileIO.cpp and all it's associated files.<br>
+    Wrote Echo.cpp and all it's associated files.<br>
+    Coordinated class interaction and standardization.<br>
+    Wrote the CUI.<br>
+    Setup Doxy documentation.<br>
+    Debugging main.cpp and WavFileIO.cpp.<br>
+    Created the final version of the makefile.<br>
+    Created the README.md.<br>
     </p> 
 
 <b><u>Connor Riche</u></b>
@@ -40,8 +47,8 @@
 
 <b><u>Challenges</u></b>
     <p>
-    One challange was figuring out how to get the header data into the vector formatt we needed for our classes.<br>>
-    Another challenge was not overwritting group members files on git hub. The solution for this was to communicate which<br>
+    One challenge was figuring out how to get the header data into the vector format we needed for our classes.<br>>
+    Another challenge was not overwriting group members files on git hub. The solution for this was to communicate which<br>
     files each group member was working on so the other people avoided editing those files.<br>
     </p> 
 
