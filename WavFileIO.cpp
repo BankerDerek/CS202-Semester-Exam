@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 #include "waveHeader.h"
 #include "WavFileIO.h"
@@ -131,8 +132,13 @@ std::string WavFileIO::constructName(std::string providedName)
     return filePath.substr(0,filePath.find_last_of("\\") + 1) + providedName + ".wav";
 }
 
+bool WavFileIO::absCompare(float a, float b)
+{
+    return std::abs(a) < std::abs(b);
+}
 
- bool WavFileIO::exportFile(std::string intendedFileName)
+
+bool WavFileIO::exportFile(std::string intendedFileName)
  {
     std::ofstream result(constructName(intendedFileName), std::ios::out | std::ios::binary);
     
@@ -140,14 +146,20 @@ std::string WavFileIO::constructName(std::string providedName)
     {
         if (waveHeader.num_channels == 1)
         {
-            std::cout << std::endl << "\t" << soundDataRight.size() << " samples" << std::endl;
+            auto maxLocation = std::max_element(soundDataRight.begin(),soundDataRight.end(),absCompare);
+            float maxValue = *maxLocation;
         }
-        else
+        if (waveHeader.num_channels == 2)
         {
-            std::cout << std::endl << "\t" << soundDataRight.size()* 2 << " samples" << std::endl;
+            auto maxLocationRight = std::max_element(soundDataRight.begin(),soundDataRight.end(),absCompare);
+            float maxValueRight = *maxLocationRight;
+            auto maxLocationLeft = std::max_element(soundDataLeft.begin(),soundDataLeft.end(),absCompare);
+            float maxValueLeft = *maxLocationLeft;
         }
 
+        int maxLocation = std::max_element();
         std::cout << "\tProgress:" << std::endl;
+
         waveHeader.sample_alignment = soundDataRight.size();
         waveHeader.data_bytes = waveHeader.sample_alignment * waveHeader.bit_depth;
         result.write((char*)&waveHeader, sizeof(waveHeader));
@@ -232,13 +244,24 @@ void WavFileIO::setSoundDataLeft (std::vector<float> inputData)
     soundDataLeft = inputData;
 }
 
+std::string WavFileIO::assembleString(char input[])
+{
+    std::string result;
+    for (int i = 0; i < sizeof(input); i++)
+    {
+        std::cout << input[i]; 
+    }
+    return result;
+} 
+
 void WavFileIO::printHeader()
 {
-    std::cout << "riff_header: " << waveHeader.riff_header[0] << waveHeader.riff_header[1] << waveHeader.riff_header[2] << waveHeader.riff_header[3] << std::endl;
+    std::cout << "riff_header: " << assembleString(waveHeader.riff_header) << std::endl;
+
     std::cout << "wav_size: " << waveHeader.wav_size << std::endl;       
     std::cout << "wave_header: " << waveHeader.wave_header << std::endl;      
 
-    std::cout << "fmt_header: " << waveHeader.fmt_header[0] << waveHeader.fmt_header[1] << waveHeader.fmt_header[2] << waveHeader.fmt_header[3] << std::endl;      
+    std::cout << "fmt_header: " << assembleString(waveHeader.fmt_header) << std::endl;      
     std::cout << "fmt_chunk_size: " << waveHeader.fmt_chunk_size << std::endl;      
     std::cout << "audio_format: " << waveHeader.audio_format << std::endl;      
     std::cout << "num_channels: " << waveHeader.num_channels << std::endl;      
@@ -247,7 +270,7 @@ void WavFileIO::printHeader()
     std::cout << "sample_alignment: " << waveHeader.sample_alignment << std::endl;      
     std::cout << "bit_depth: " << waveHeader.bit_depth << std::endl;      
 
-    std::cout << "data_header: " << waveHeader.data_header[0] << waveHeader.data_header[1] << waveHeader.data_header[2] << waveHeader.data_header[3] << std::endl;      
+    std::cout << "data_header: " << assembleString(waveHeader.data_header)<< std::endl;      
     std::cout << "data_bytes: " << waveHeader.data_bytes << std::endl;
 }
 #endif

@@ -60,6 +60,7 @@ int main()
         if (audioFile.ingestFile(userInput))
         {
             cout << "\tFile loaded successfully." << endl << endl;
+            audioFile.printHeader();
             break;
         }
         cout << "\tFile failed to load. Please try a different file." << endl;
