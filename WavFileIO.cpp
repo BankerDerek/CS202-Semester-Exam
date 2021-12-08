@@ -39,6 +39,10 @@ bool WavFileIO::validateFile(std::string inputFilePath)
     return true;
 }
 
+/// Reads in the files data
+/** Parses the provided files headed data to the waveHeader struct and stores the sound data in vector<float>s depending on how many channels. */
+/// @param "string inputFilePath" Contains the location of the file to validate
+/// @return Returns the state of the operation. 
 bool WavFileIO::ingestFile (std::string inputFilePath)
 {
     // Checks if the file exists and has a ".wav" extension
@@ -112,6 +116,10 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
     return false;
 }
 
+/// Makes sure the attempted file name is valid
+/** Scans the attempted file name for any invald characters. */
+/// @param "string providedName" Is the name the the user is attempting to provide.
+/// @return Returns the state of providedName.
 bool WavFileIO::validateName(std::string providedName)
 {
     char nonValidCharacter[] = {'<','>',':','"','/','\\','|','?','*'};
@@ -128,11 +136,19 @@ bool WavFileIO::validateName(std::string providedName)
     return true;
 }
 
+/// Creates the string for the file location
+/** Takes the file name off the original file path and adds the new name and the ".wav" extension. */
+/// @param "string providedName" Is the name the user has provided.
+/// @return Returns the string of the export file path.
 std::string WavFileIO::constructName(std::string providedName)
 {
     return filePath.substr(0,filePath.find_last_of("\\") + 1) + providedName + ".wav";
 }
 
+/// Finds the max element in a given vector<float>
+/** Finds the max element in a given vector<float> by comparing the abs of all items  */
+/// @param "vector<float> input" the vector to be examined.
+/// @return Returns the largest item
 float WavFileIO::maxElement(std::vector<float> input)
 {
     float result = input[0];
@@ -146,6 +162,7 @@ float WavFileIO::maxElement(std::vector<float> input)
     return result;
 }
 
+/// Updates the header to new channel sizes.
 void WavFileIO::updateHeader()
 {
     waveHeader.sample_alignment = soundDataRight.size();
