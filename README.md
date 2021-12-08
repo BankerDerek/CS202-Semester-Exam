@@ -1,6 +1,10 @@
 @mainpage CS 202 Semester Project
 
-<h1><b>Credit</b></h1>
+<h1><b>This assignment is the base functionality but with the two extra classes (low pass filter and compression)</b></h1>
+
+<h2><b>Names: Derek Banker, Connor Riche, Sulton Kholmatov</b></h2>
+
+<h3><b>Credit</b></h3>
 
 <b><u>Derek Banker</u></b>
     <p>
@@ -21,4 +25,22 @@
 
     </p>
 
+<b><u>UML Diagram</u></b>
+    <p>
 
+    </p> 
+
+<b><u>Issues (any missing functionality? - remove note before submitting)</u></b>
+    <p>
+
+    </p> 
+
+<b><u>Challenges</u></b>
+    <p>
+    One challange was figuring out how to get the header data into the vector formatt we needed for our classes.</b>
+    </p> 
+
+<b><u>Instructions</u></b>
+    <p>
+    Nothing beyond make is required for building the Application.<br>
+    </p> 
