@@ -2,7 +2,7 @@
 
 <h1><b>This assignment is the base functionality but with the two extra classes (low pass filter and compression)</b></h1>
 
-<h2><b>Names: Derek Banker, Connor Riche, Sulton Kholmatov</b></h2>
+<h2><b>Names: Derek Banker, Connor Riche, Sultonbek Kholmatov</b></h2>
 
 <h3><b>Credit</b></h3>
 
