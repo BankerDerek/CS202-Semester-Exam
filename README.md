@@ -37,7 +37,9 @@
 
 <b><u>Challenges</u></b>
     <p>
-    One challange was figuring out how to get the header data into the vector formatt we needed for our classes.</b>
+    One challange was figuring out how to get the header data into the vector formatt we needed for our classes.<br>>
+    Another challenge was not overwritting group members files on git hub. The solution for this was to communicate which<br>
+    files each group member was working on so the other people avoided editing those files.<br>
     </p> 
 
 <b><u>Instructions</u></b>
