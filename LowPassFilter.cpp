@@ -1,5 +1,5 @@
 //Connor Riche
-//Sultonbek Kholmatov
+//Sultan
 //LowPassFilter.cpp file
 
 #include "LowPassFilter.h"
