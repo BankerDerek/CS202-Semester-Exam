@@ -65,8 +65,10 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
         buffer = new short[waveHeader.data_bytes];
         file.read((char*)buffer, waveHeader.data_bytes);
 
+        // Reads the sound data from single channel files
         if (waveHeader.num_channels == 1)
         {
+            // Reads the sound data from 8 bit files
             if (waveHeader.bit_depth == 8)
             {
                 for (int i = 0; i < waveHeader.data_bytes / waveHeader.sample_alignment; i++ )
@@ -74,6 +76,7 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
                     soundDataRight.push_back((float)buffer[i] / INT_FAST8_MAX);
                 }
             }
+            // Reads the sound data from 16 bit files
             if (waveHeader.bit_depth == 16)
             {
                 for (int i = 0; i < waveHeader.data_bytes / waveHeader.sample_alignment; i++ )
@@ -82,8 +85,10 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
                 }
             }
         }
+        // Reads the sound data from dual channel files
         else
         {
+            // Reads the sound data from 8 bit files
             if (waveHeader.bit_depth == 8)
             {
                 for (int i = 0; i < (waveHeader.data_bytes / waveHeader.sample_alignment) / 2; i++ )
@@ -95,6 +100,7 @@ bool WavFileIO::ingestFile (std::string inputFilePath)
                     soundDataLeft.push_back((float)buffer[i] / INT_FAST8_MAX);
                 }
             }
+            // Reads the sound data from 16 bit files
             if (waveHeader.bit_depth == 16)
             {
                 for (int i = 0; i < (waveHeader.data_bytes / waveHeader.sample_alignment) / 2; i++ )
@@ -169,17 +175,25 @@ void WavFileIO::updateHeader()
     waveHeader.data_bytes = waveHeader.sample_alignment * waveHeader.bit_depth;
 }
 
+/// Exports the updated sound data to a file
+/** Takes the provided name and exports the header and sound data to the file */
+/// @note it doesn't actually work, I tried so hard, it makes the file it just doesn't have any data somehow.
+/// @param "string intendedFileName" The the name of the resulting file.
+/// @return Returns the state of the opperation.
 bool WavFileIO::exportFile(std::string intendedFileName)
 {
+    // Opens the file to write to
     std::ofstream result(constructName(intendedFileName), std::ios::out | std::ios::binary);
     if (result.is_open())
     {
         updateHeader();
 
+        // Handles single channel files
         if (waveHeader.num_channels == 1)
         {
             short* buffer;
 
+            // Handles 8 bit files
             if (waveHeader.bit_depth == 8)
             {
                 float maxValue = maxElement(soundDataRight);
@@ -189,6 +203,7 @@ bool WavFileIO::exportFile(std::string intendedFileName)
                     buffer[i] = (short) soundDataRight[i] * INT_FAST8_MAX;
                 }
             }
+            // Handles 16 bit files
             if (waveHeader.bit_depth == 16)
             {
                 float maxValue = maxElement(soundDataRight);
@@ -199,14 +214,17 @@ bool WavFileIO::exportFile(std::string intendedFileName)
                 }
             }
 
+            // The final writing to the file
             result.write((char*) &waveHeader, sizeof(waveHeader));
             result.write((char*) &buffer, waveHeader.data_bytes);
         }
+        // Handles dual channel files
         if (waveHeader.num_channels == 2)
         {
             short* bufferRight;
             short* bufferLeft;
 
+            /// Handles 8 bit files
             if (waveHeader.bit_depth == 8)
             {
                 float maxValueRight = maxElement(soundDataRight);
@@ -222,6 +240,7 @@ bool WavFileIO::exportFile(std::string intendedFileName)
                     bufferLeft[i] = (short) soundDataLeft[i] * INT_FAST8_MAX;
                 }
             }
+            // Handles 16 bit files
             if (waveHeader.bit_depth == 16)
             {
                 float maxValueRight = maxElement(soundDataRight);
@@ -238,6 +257,7 @@ bool WavFileIO::exportFile(std::string intendedFileName)
                 }
             }
 
+            // The final writing to the file
             result.write((char*) &waveHeader, sizeof(waveHeader));
             result.write((char*) &bufferRight, waveHeader.data_bytes / 2);
             result.write((char*) &bufferLeft, waveHeader.data_bytes / 2);
@@ -249,38 +269,46 @@ bool WavFileIO::exportFile(std::string intendedFileName)
     return false;
  }
 
-// Get's the sample rate
+/// Get's the sample rate
 int WavFileIO::getSampleRate()
 {
     return waveHeader.sample_rate;
 }
 
-// Gets the number of audio channels
+/// Gets the number of audio channels
 int WavFileIO::getNumberOfChannels()
 {
     return waveHeader.num_channels;
 }
 
-// Sets and Gets for the audio channels 
+/// Gets the right channel data 
 std::vector<float> WavFileIO::getSoundDataRight() 
 {
     return soundDataRight;
 }
+/// Gets the left channel data 
 std::vector<float> WavFileIO::getSoundDataLeft() 
 {
     return soundDataLeft;
 }
+/// Sets the right channel data 
 void WavFileIO::setSoundDataRight (std::vector<float> inputData)
 {
     soundDataRight.clear();
     soundDataRight = inputData;
 }
+/// Sets the left channel data 
 void WavFileIO::setSoundDataLeft (std::vector<float> inputData)
 {
     soundDataLeft.clear();
     soundDataLeft = inputData;
 }
 
+
+/// Converts a char[] into a string
+/// @note This does throw a warning because of "sizeof" but that is accounted for and can be ignored.
+/// @param "char input[]" The provided char array.
+/// @return returns a string with the elements of input[].
 std::string WavFileIO::assembleString(char input[])
 {
     std::string result;
@@ -291,6 +319,7 @@ std::string WavFileIO::assembleString(char input[])
     return result;
 } 
 
+/// Simply prints the data in waveHeader to the console
 void WavFileIO::printHeader()
 {
     std::cout << "riff_header: " << assembleString(waveHeader.riff_header) << std::endl;
@@ -312,6 +341,3 @@ void WavFileIO::printHeader()
     std::cout << std::endl;
 }
 #endif
-
-
-// C:\TEMP\yes-16-bit-mono.wav

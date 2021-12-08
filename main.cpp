@@ -12,19 +12,21 @@
 #include "Normalization.h"      // Sultan
 #include "Compression.h"        // Sultan
 #include "Echo.h"               // Derek
-#include "AudioProcessor.h"     //Connor
+#include "AudioProcessor.h"     // Connor
 
 using namespace std;
 
+/// Handles the CUI
+/** Promts the user for inputs as well as controls for invalid inputs. */
 int main()
 {
     // Class initializations
-    WavFileIO audioFile;
-    Process low_pass_filter;
-    Process gain_adjustment;
-    Process normalization; 
-    Process compression;
-    Process echo;
+    WavFileIO audioFile;        // Initialization of the WavFileIO class
+    Process low_pass_filter;    // Initialization of the low_pass_filter Process
+    Process gain_adjustment;    // Initialization of the gain_adjustment Process
+    Process normalization;      // Initialization of the normalization Process
+    Process compression;        // Initialization of the compression Process
+    Process echo;               // Initialization of the echo Process
 
     // Intoduction
     cout << endl << "Initializing Audio Editor..." << endl;
@@ -104,6 +106,7 @@ int main()
         float gain;
         int delay;
 
+        // Controls of invald gain values
         cout << "Please provide a gain > 1." << endl;
         while (true)
         {
@@ -115,6 +118,7 @@ int main()
                 break;
             }
         }
+        // Controls of invald delay values
         cout << "Please provide a delay in miliseconds" << endl;
         while (true)
         {
@@ -127,6 +131,7 @@ int main()
             }
         }
 
+        // converts the delay to miliseconds
         delay = delay * (audioFile.getSampleRate() / 1000);
 
 
@@ -186,6 +191,7 @@ int main()
     }
     cout << "\t Module application complete..." << endl << endl;
 
+    // Get's export file name
     cout << "Please provide a file name" << endl << "Note: file name cannot contain any of the following: \"<>,:/\\|?*\"" << endl;
     while (true)
     {

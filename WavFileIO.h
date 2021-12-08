@@ -6,15 +6,16 @@
 #include "waveHeader.h"
 
 /// Handles all the input and output of the wav files
+/** Is responsible for input and output of the files as well as data storage */
 class WavFileIO
 {
     private:
-        std::string filePath;                    // Holds the provided file path
+        std::string filePath;                   ///< Holds the provided file path
 
-        struct WaveHeader waveHeader;           // Holds the file header
+        struct WaveHeader waveHeader;           ///< Holds the file header
 
-        std::vector<float> soundDataRight;      // Right channel audio data in stereo, also used if mono
-        std::vector<float> soundDataLeft;       // Left channel audio data in stereo
+        std::vector<float> soundDataRight;      ///< Right channel audio data in stereo, also used if mono
+        std::vector<float> soundDataLeft;       ///< Left channel audio data in stereo
 
 
     public:
