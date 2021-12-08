@@ -23,8 +23,9 @@
     Created initial makefile. <br>
     Wrote .h and .cpp files for GainAdjustment, LowPassFilter, and AudioProcessor classes.<br>
     Assisted in making a viable Compression class.<br>
-    Made many small changes and fixes to main files with the goal of successful compiling.<br>
-    Wrote the doxygen documentation for the .h files of AudioProcessor, LowPassFilter, GainAdjustment and Echo classes.<br>
+    Made changes and fixes to main files with the goal of successful compiling.<br>
+    Wrote the doxygen documentation for AudioProcessor, LowPassFilter, GainAdjustment and Echo classes.<br>
+    Participated in miscellaneous debugging.<br>
     </p>
 
 <b><u>Sultonbek Kholmatov</u></b>
