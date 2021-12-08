@@ -8,7 +8,7 @@
 std::vector<float> GainAdjustment::adjustVector(std::vector<float> waveOriginal){
         std::vector<float> finalWave;
         for(int i=0; i < sizeof(waveOriginal); i++){
-            finalWave[i] = adjustment(waveOriginal[i]);
+            finalWave.push_back(adjustment(waveOriginal[i]));
         }
         return finalWave;
     }
