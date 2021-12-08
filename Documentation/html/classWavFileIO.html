@@ -115,6 +115,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae97db8313fed19e69ff377b5dc622b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78040e9bb41376f19e32a547850fa234"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#a78040e9bb41376f19e32a547850fa234">constructName</a> (std::string providedName)</td></tr>
 <tr class="separator:a78040e9bb41376f19e32a547850fa234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e888748f67c3cc4a5544afe167500ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#a3e888748f67c3cc4a5544afe167500ee">absCompare</a> (float a, float b)</td></tr>
+<tr class="separator:a3e888748f67c3cc4a5544afe167500ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39b8aa097dca529d6ad71d0cde77e5c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#a39b8aa097dca529d6ad71d0cde77e5c0">exportFile</a> (std::string intendedFileName)</td></tr>
 <tr class="separator:a39b8aa097dca529d6ad71d0cde77e5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bed7a9961aa92994ac95cc71204a09b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#a9bed7a9961aa92994ac95cc71204a09b">getSampleRate</a> ()</td></tr>
@@ -129,12 +131,60 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af05cc16fcc4f5f9e9b2fdf4e71895136"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad15f9f3450d2ed5aa35c689c2e0a4012"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#ad15f9f3450d2ed5aa35c689c2e0a4012">setSoundDataLeft</a> (std::vector&lt; float &gt; inputData)</td></tr>
 <tr class="separator:ad15f9f3450d2ed5aa35c689c2e0a4012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21456066e576d43832b300c9d00a0d99"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#a21456066e576d43832b300c9d00a0d99">assembleString</a> (char input[])</td></tr>
+<tr class="separator:a21456066e576d43832b300c9d00a0d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae979b82d6003e3fdf3a42bc2ab759c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#aae979b82d6003e3fdf3a42bc2ab759c3">printHeader</a> ()</td></tr>
 <tr class="separator:aae979b82d6003e3fdf3a42bc2ab759c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Handles all the input and output of the wav files. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3e888748f67c3cc4a5544afe167500ee" name="a3e888748f67c3cc4a5544afe167500ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e888748f67c3cc4a5544afe167500ee">&#9670;&nbsp;</a></span>absCompare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WavFileIO::absCompare </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21456066e576d43832b300c9d00a0d99" name="a21456066e576d43832b300c9d00a0d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21456066e576d43832b300c9d00a0d99">&#9670;&nbsp;</a></span>assembleString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string WavFileIO::assembleString </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>input</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a78040e9bb41376f19e32a547850fa234" name="a78040e9bb41376f19e32a547850fa234"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78040e9bb41376f19e32a547850fa234">&#9670;&nbsp;</a></span>constructName()</h2>
 

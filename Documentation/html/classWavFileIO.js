@@ -1,5 +1,7 @@
 var classWavFileIO =
 [
+    [ "absCompare", "classWavFileIO.html#a3e888748f67c3cc4a5544afe167500ee", null ],
+    [ "assembleString", "classWavFileIO.html#a21456066e576d43832b300c9d00a0d99", null ],
     [ "constructName", "classWavFileIO.html#a78040e9bb41376f19e32a547850fa234", null ],
     [ "exportFile", "classWavFileIO.html#a39b8aa097dca529d6ad71d0cde77e5c0", null ],
     [ "getNumberOfChannels", "classWavFileIO.html#a6255bbce90a8b1871fcbd4c6f34329bb", null ],
