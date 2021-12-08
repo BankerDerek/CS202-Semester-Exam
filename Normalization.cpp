@@ -4,11 +4,9 @@
 #include "Normalization.h"
 
 std::vector<float> Normalization::normalize(std::vector<float> inputData){
-	float largestValue = 0;
-	float multiplier;
-	std::vector<float> normalizedData;
+	
 
-	for(int i = 0; i < inputData.size(); i++){
+	for(int i = 0; i < sizeof(inputData); i++){
 		if(largestValue < inputData[i]){
 			largestValue = inputData[i];
 		}

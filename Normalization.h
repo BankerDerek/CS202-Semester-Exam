@@ -12,6 +12,10 @@
 ///It does this by finding the largest value in the data which is used to find a constant value. Then every single value in the data is multiplied by that constant value.
 ///This will essentially normalize the audio file by maximizing the amplitude of the final waveform.
 class Normalization{
+private:
+	float largestValue = 0;
+	float multiplier;
+	std::vector<float> normalizedData;
 public:
 	///Normalize the vector
 	///
