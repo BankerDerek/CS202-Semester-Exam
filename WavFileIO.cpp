@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <cmath>
 
 #include "waveHeader.h"
 #include "WavFileIO.h"
@@ -132,80 +133,99 @@ std::string WavFileIO::constructName(std::string providedName)
     return filePath.substr(0,filePath.find_last_of("\\") + 1) + providedName + ".wav";
 }
 
-bool WavFileIO::absCompare(float a, float b)
+float WavFileIO::maxElement(std::vector<float> input)
 {
-    return std::abs(a) < std::abs(b);
+    float result = input[0];
+    for (int i = 1; i < input.size(); i++)
+    {
+        if (fabs(result) < fabs(input[i]))
+        {
+            result = input[i];
+        }
+    }
+    return result;
 }
 
+void WavFileIO::updateHeader()
+{
+    waveHeader.sample_alignment = soundDataRight.size();
+    waveHeader.data_bytes = waveHeader.sample_alignment * waveHeader.bit_depth;
+}
 
 bool WavFileIO::exportFile(std::string intendedFileName)
- {
+{
     std::ofstream result(constructName(intendedFileName), std::ios::out | std::ios::binary);
-    
     if (result.is_open())
     {
-        if (waveHeader.num_channels == 1)
-        {
-            auto maxLocation = std::max_element(soundDataRight.begin(),soundDataRight.end(),absCompare);
-            float maxValue = *maxLocation;
-        }
-        if (waveHeader.num_channels == 2)
-        {
-            auto maxLocationRight = std::max_element(soundDataRight.begin(),soundDataRight.end(),absCompare);
-            float maxValueRight = *maxLocationRight;
-            auto maxLocationLeft = std::max_element(soundDataLeft.begin(),soundDataLeft.end(),absCompare);
-            float maxValueLeft = *maxLocationLeft;
-        }
-
-        int maxLocation = std::max_element();
-        std::cout << "\tProgress:" << std::endl;
-
-        waveHeader.sample_alignment = soundDataRight.size();
-        waveHeader.data_bytes = waveHeader.sample_alignment * waveHeader.bit_depth;
-        result.write((char*)&waveHeader, sizeof(waveHeader));
-        std::cout << "\t\tWritten header..." << std::endl;
-        
-        short* buffer;
+        updateHeader();
 
         if (waveHeader.num_channels == 1)
         {
-            for (int i = 0; i < soundDataRight.size(); i++)
+            short* buffer;
+
+            if (waveHeader.bit_depth == 8)
             {
-                if ((i % (soundDataRight.size() / 20)) == 0)
+                float maxValue = maxElement(soundDataRight);
+                for (int i = 0; i < soundDataRight.size(); i++)
                 {
-                    std::cout << "\t\tData writing: " << (i/soundDataRight.size()) << "%" << std::endl;
+                    soundDataRight[i] = soundDataRight[i] / maxValue;
+                    buffer[i] = (short) soundDataRight[i] * INT_FAST8_MAX;
                 }
-                buffer[i] = soundDataRight[i];
             }
-            result.write((char*)&buffer, sizeof(buffer));
-            std::cout << "\t\tWriting: Done" << std::endl;
+            if (waveHeader.bit_depth == 16)
+            {
+                float maxValue = maxElement(soundDataRight);
+                for (int i = 0; i < soundDataRight.size(); i++)
+                {
+                    soundDataRight[i] = soundDataRight[i] / maxValue;
+                    buffer[i] = (short) soundDataRight[i] * INT_FAST16_MAX;
+                }
+            }
+
+            result.write((char*) &waveHeader, sizeof(waveHeader));
+            result.write((char*) &buffer, waveHeader.data_bytes);
         }
         if (waveHeader.num_channels == 2)
         {
-            for (int i = 0; i < soundDataRight.size(); i++)
-            {
-                if ((i % (soundDataRight.size() / 20)) == 0)
-                {
-                    std::cout << "\t\tRight Channel Data writing: " << (i/soundDataRight.size()) << "%" << std::endl;
-                }
-                buffer[i] = soundDataRight[i];
-            }
-            result.write((char*)&buffer, sizeof(buffer));
-            std::cout << "\t\tWriting Right Channel: Done" << std::endl;
+            short* bufferRight;
+            short* bufferLeft;
 
-            buffer = new short[waveHeader.data_bytes];
-            for (int i = 0; i < soundDataLeft.size(); i++)
+            if (waveHeader.bit_depth == 8)
             {
-                if ((i % (soundDataRight.size() / 20)) == 0)
+                float maxValueRight = maxElement(soundDataRight);
+                for (int i = 0; i < soundDataRight.size(); i++)
                 {
-                    std::cout << "\t\tLeft Channel Data writing: " << (i/soundDataRight.size()) << "%" << std::endl;
+                    soundDataRight[i] = soundDataRight[i] / maxValueRight;
+                    bufferRight[i] = (short) soundDataRight[i] * INT_FAST8_MAX;
                 }
-                buffer[i] = soundDataLeft[i];
+                float maxValueLeft = maxElement(soundDataLeft);
+                for (int i = 0; i < soundDataLeft.size(); i++)
+                {
+                    soundDataLeft[i] = soundDataLeft[i] / maxValueLeft;
+                    bufferLeft[i] = (short) soundDataLeft[i] * INT_FAST8_MAX;
+                }
             }
-            result.write((char*)&buffer, sizeof(buffer));
-            std::cout << "\t\tWriting Left Channel: Done" << std::endl;
+            if (waveHeader.bit_depth == 16)
+            {
+                float maxValueRight = maxElement(soundDataRight);
+                for (int i = 0; i < soundDataRight.size(); i++)
+                {
+                    soundDataRight[i] = soundDataRight[i] / maxValueRight;
+                    bufferRight[i] = (short) soundDataRight[i] * INT_FAST16_MAX;
+                }
+                float maxValueLeft = maxElement(soundDataLeft);
+                for (int i = 0; i < soundDataLeft.size(); i++)
+                {
+                    soundDataLeft[i] = soundDataLeft[i] / maxValueLeft;
+                    bufferLeft[i] = (short) soundDataLeft[i] * INT_FAST16_MAX;
+                }
+            }
+
+            result.write((char*) &waveHeader, sizeof(waveHeader));
+            result.write((char*) &bufferRight, waveHeader.data_bytes / 2);
+            result.write((char*) &bufferLeft, waveHeader.data_bytes / 2);
         }
-        delete buffer;
+     
         result.close();
         return true;
     }
@@ -247,7 +267,7 @@ void WavFileIO::setSoundDataLeft (std::vector<float> inputData)
 std::string WavFileIO::assembleString(char input[])
 {
     std::string result;
-    for (int i = 0; i < sizeof(input); i++)
+    for (int i = 0; i < sizeof(input)/sizeof(input[0]); i++)
     {
         std::cout << input[i]; 
     }
@@ -272,6 +292,7 @@ void WavFileIO::printHeader()
 
     std::cout << "data_header: " << assembleString(waveHeader.data_header)<< std::endl;      
     std::cout << "data_bytes: " << waveHeader.data_bytes << std::endl;
+    std::cout << std::endl;
 }
 #endif
 

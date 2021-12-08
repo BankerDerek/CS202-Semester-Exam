@@ -26,8 +26,8 @@ class WavFileIO
 
         std::string constructName(std::string providedName);
 
-        bool absCompare(float a, float b);
-
+        float maxElement(std::vector<float> input);
+        void updateHeader();
         bool exportFile(std::string intendedFileName);
 
         // Gets the sample rate
