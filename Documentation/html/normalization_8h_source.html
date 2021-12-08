@@ -104,11 +104,15 @@ $(document).ready(function(){initNavTree('Normalization_8h_source.html',''); ini
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classNormalization.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="classNormalization.html">Normalization</a>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::vector&lt;float&gt; <a class="code hl_function" href="classNormalization.html#af5fbe812855a4a1a8ed17369c1f8563e">normalize</a>(std::vector&lt;float&gt; inputData);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif </span><span class="comment">//NORMALIZATION_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">float</span> largestValue = 0;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">float</span> multiplier;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    std::vector&lt;float&gt; normalizedData;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    std::vector&lt;float&gt; <a class="code hl_function" href="classNormalization.html#af5fbe812855a4a1a8ed17369c1f8563e">normalize</a>(std::vector&lt;float&gt; inputData);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif </span><span class="comment">//NORMALIZATION_H</span></div>
 <div class="ttc" id="aclassNormalization_html"><div class="ttname"><a href="classNormalization.html">Normalization</a></div><div class="ttdoc">The Normalization class normalizes a sound file.</div><div class="ttdef"><b>Definition:</b> Normalization.h:14</div></div>
 <div class="ttc" id="aclassNormalization_html_af5fbe812855a4a1a8ed17369c1f8563e"><div class="ttname"><a href="classNormalization.html#af5fbe812855a4a1a8ed17369c1f8563e">Normalization::normalize</a></div><div class="ttdeci">std::vector&lt; float &gt; normalize(std::vector&lt; float &gt; inputData)</div><div class="ttdoc">Normalize the vector.</div><div class="ttdef"><b>Definition:</b> Normalization.cpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->

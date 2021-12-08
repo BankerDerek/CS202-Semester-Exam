@@ -110,13 +110,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a593f67696f943f09ad3ee4e8fdbbc319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes sure the file is valid.  <a href="classWavFileIO.html#a593f67696f943f09ad3ee4e8fdbbc319">More...</a><br /></td></tr>
 <tr class="separator:a593f67696f943f09ad3ee4e8fdbbc319"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adecb7bee6f7e9cd09a77ca84ade064a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#adecb7bee6f7e9cd09a77ca84ade064a3">ingestFile</a> (std::string inputFilePath)</td></tr>
+<tr class="memdesc:adecb7bee6f7e9cd09a77ca84ade064a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads in the files data.  <a href="classWavFileIO.html#adecb7bee6f7e9cd09a77ca84ade064a3">More...</a><br /></td></tr>
 <tr class="separator:adecb7bee6f7e9cd09a77ca84ade064a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae97db8313fed19e69ff377b5dc622b13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#ae97db8313fed19e69ff377b5dc622b13">validateName</a> (std::string providedName)</td></tr>
+<tr class="memdesc:ae97db8313fed19e69ff377b5dc622b13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes sure the attempted file name is valid.  <a href="classWavFileIO.html#ae97db8313fed19e69ff377b5dc622b13">More...</a><br /></td></tr>
 <tr class="separator:ae97db8313fed19e69ff377b5dc622b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78040e9bb41376f19e32a547850fa234"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#a78040e9bb41376f19e32a547850fa234">constructName</a> (std::string providedName)</td></tr>
+<tr class="memdesc:a78040e9bb41376f19e32a547850fa234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the string for the file location.  <a href="classWavFileIO.html#a78040e9bb41376f19e32a547850fa234">More...</a><br /></td></tr>
 <tr class="separator:a78040e9bb41376f19e32a547850fa234"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e888748f67c3cc4a5544afe167500ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#a3e888748f67c3cc4a5544afe167500ee">absCompare</a> (float a, float b)</td></tr>
-<tr class="separator:a3e888748f67c3cc4a5544afe167500ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6936485db42326129c6a72f242991e86"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#a6936485db42326129c6a72f242991e86">maxElement</a> (std::vector&lt; float &gt; input)</td></tr>
+<tr class="memdesc:a6936485db42326129c6a72f242991e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the max element in a given vector&lt;float&gt;  <a href="classWavFileIO.html#a6936485db42326129c6a72f242991e86">More...</a><br /></td></tr>
+<tr class="separator:a6936485db42326129c6a72f242991e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe3ae97710b915835e67818332b45bd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#abe3ae97710b915835e67818332b45bd3">updateHeader</a> ()</td></tr>
+<tr class="memdesc:abe3ae97710b915835e67818332b45bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the header to new channel sizes.  <a href="classWavFileIO.html#abe3ae97710b915835e67818332b45bd3">More...</a><br /></td></tr>
+<tr class="separator:abe3ae97710b915835e67818332b45bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39b8aa097dca529d6ad71d0cde77e5c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#a39b8aa097dca529d6ad71d0cde77e5c0">exportFile</a> (std::string intendedFileName)</td></tr>
 <tr class="separator:a39b8aa097dca529d6ad71d0cde77e5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bed7a9961aa92994ac95cc71204a09b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWavFileIO.html#a9bed7a9961aa92994ac95cc71204a09b">getSampleRate</a> ()</td></tr>
@@ -139,34 +146,6 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Handles all the input and output of the wav files. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3e888748f67c3cc4a5544afe167500ee" name="a3e888748f67c3cc4a5544afe167500ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e888748f67c3cc4a5544afe167500ee">&#9670;&nbsp;</a></span>absCompare()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool WavFileIO::absCompare </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a21456066e576d43832b300c9d00a0d99" name="a21456066e576d43832b300c9d00a0d99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21456066e576d43832b300c9d00a0d99">&#9670;&nbsp;</a></span>assembleString()</h2>
 
@@ -200,6 +179,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates the string for the file location. </p>
+<p >Takes the file name off the original file path and adds the new name and the ".wav" extension. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string providedName</td><td>Is the name the user has provided. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the string of the export file path. </dd></dl>
 
 </div>
 </div>
@@ -305,6 +293,44 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Reads in the files data. </p>
+<p >Parses the provided files headed data to the waveHeader struct and stores the sound data in vector&lt;float&gt;s depending on how many channels. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string inputFilePath</td><td>Contains the location of the file to validate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the state of the operation. <br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="a6936485db42326129c6a72f242991e86" name="a6936485db42326129c6a72f242991e86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6936485db42326129c6a72f242991e86">&#9670;&nbsp;</a></span>maxElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float WavFileIO::maxElement </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds the max element in a given vector&lt;float&gt; </p>
+<p >Finds the max element in a given vector&lt;float&gt; by comparing the abs of all items <br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector&lt;float&gt; input</td><td>the vector to be examined. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the largest item </dd></dl>
+
 </div>
 </div>
 <a id="aae979b82d6003e3fdf3a42bc2ab759c3" name="aae979b82d6003e3fdf3a42bc2ab759c3"></a>
@@ -360,6 +386,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="abe3ae97710b915835e67818332b45bd3" name="abe3ae97710b915835e67818332b45bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe3ae97710b915835e67818332b45bd3">&#9670;&nbsp;</a></span>updateHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WavFileIO::updateHeader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the header to new channel sizes. </p>
+
+</div>
+</div>
 <a id="a593f67696f943f09ad3ee4e8fdbbc319" name="a593f67696f943f09ad3ee4e8fdbbc319"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a593f67696f943f09ad3ee4e8fdbbc319">&#9670;&nbsp;</a></span>validateFile()</h2>
 
@@ -403,6 +448,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Makes sure the attempted file name is valid. </p>
+<p >Scans the attempted file name for any invald characters. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string providedName</td><td>Is the name the the user is attempting to provide. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the state of providedName. </dd></dl>
 
 </div>
 </div>
