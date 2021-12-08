@@ -20,7 +20,7 @@
     Wrote the doxygen documentation for the .h files of AudioProcessor, LowPassFilter, GainAdjustment and Echo classes.<br>
     </p>
 
-<b><u>Sulton Kholmatov</u></b>
+<b><u>Sultonbek Kholmatov</u></b>
     <p> 
 
     </p>
